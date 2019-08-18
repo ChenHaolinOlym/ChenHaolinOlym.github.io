@@ -256,6 +256,304 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://chenhaolinolym.github.io/2019/08/10/daterangeslider/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Olym Chen">
+      <meta itemprop="description" content="Just a Blog">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Olym's Secret House">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/08/10/daterangeslider/" class="post-title-link" itemprop="url">Properties of Bokeh Daterangeslider that Helps Develop</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-10 18:23:51" itemprop="dateCreated datePublished" datetime="2019-08-10T18:23:51+08:00">2019-08-10</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-13 22:33:28" itemprop="dateModified" datetime="2019-08-13T22:33:28+08:00">2019-08-13</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/article/" itemprop="url" rel="index"><span itemprop="name">article</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/article/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/article/python/bokeh/" itemprop="url" rel="index"><span itemprop="name">bokeh</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              
+              <span>991</span>
+            </span>
+          
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              
+              <span>1 mins.</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This article is about two special property of Daterangeslider in bokeh, which can help develop your bokeh app.</p>
+<p>My bokeh version is 1.3.1.</p>
+<h2 id="Body"><a href="#Body" class="headerlink" title="Body"></a>Body</h2><p>According to the <a href="https://bokeh.pydata.org/en/latest/docs/reference/models/widgets.sliders.html" target="_blank" rel="noopener">official documentation</a>, Bokeh Daterangeslider has two property method: <code>value_as_date</code> and <code>value_as_datetime</code>.</p>
+<p>Normally, when you called the on_change callback function, bokeh will return you a tuple of Unix timestamp in miliseconds. It’s very inconvinient to change the format of the datetime.</p>
+<p>So you can call <code>daterangeslider.value_as_date</code> or <code>daterangeslider.value_as_datetime</code> (remember this is property not method) in your callback function. Both will return you a tuple of datetime.date object, which can be conveniently turned into any format of datetime via its own strftime method.</p>
+<p>Yet anothor way of using property method doesn’t work.</p>
+<p>You can’t simply pass in <code>value_as_date</code> or <code>value_as_datetime</code> in the on_change method. </p>
+<p>e.g. <code>daterangeslider.on_change(&quot;value_as_date&quot;, on_change)</code></p>
+<p>This will raise an error</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://chenhaolinolym.github.io/2019/08/10/embed/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Olym Chen">
+      <meta itemprop="description" content="Just a Blog">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Olym's Secret House">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/08/10/embed/" class="post-title-link" itemprop="url">Embed Bokeh Application in Flask</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-10 17:57:14" itemprop="dateCreated datePublished" datetime="2019-08-10T17:57:14+08:00">2019-08-10</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-13 22:44:41" itemprop="dateModified" datetime="2019-08-13T22:44:41+08:00">2019-08-13</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/article/" itemprop="url" rel="index"><span itemprop="name">article</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/article/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/article/python/bokeh/" itemprop="url" rel="index"><span itemprop="name">bokeh</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              
+              <span>1.9k</span>
+            </span>
+          
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              
+              <span>2 mins.</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <p>This article is based on the <a href="https://bokeh.pydata.org/en/latest/docs/user_guide/embed.html" target="_blank" rel="noopener">official document</a> of Bokeh and is about embed bokeh application in flask using app sessions.</p>
+<p>What you need to do is to pull a session from a bokeh server, turn it into script and insert it into your template.</p>
+<p>So you need to set up a bokeh server first.</p>
+<p><code>bokeh serve --show &quot;your bokeh file address&quot;</code></p>
+<p>Keep it open.</p>
+<p>Due to Bokeh’s safety settings, you need to set <code>allow web-socket origin</code> to avoid errors when you are setting up your bokeh server.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bokeh serve --show &quot;your bokeh file address&quot;</span><br><span class="line">--allow-websocket-origin=localhost:5006  (This is bokeh server&apos;s default port, if you reset the port, change it to the port you set)</span><br><span class="line">--allow-websocket-origin=&quot;your web page address that you want to embed your bokeh app&quot;</span><br></pre></td></tr></table></figure>
+
+<p>Then you need to complete your route function:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def bkapp_page():</span><br><span class="line">    with pull_session(url=&quot;http://localhost:5006/&#123;your bokeh file name&#125;&quot;) as session:</span><br><span class="line">        script = server_session(session_id=session.id, url=&apos;http://localhost:5006/&#123;your bokeh file name&#125;&apos;) (As the above, change the port if you reset it yourself)</span><br><span class="line">        return render_template(&quot;your template&quot;, script=script, template=&quot;Flask&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>Don’t forget to import the functions you need</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from bokeh.client import pull_session</span><br><span class="line">from bokeh.embed import server_session</span><br></pre></td></tr></table></figure>
+
+<p>Finally, put the script into your template.</p>
+<p>In the body part of the template:</p>
+<p>Put in: <code>{{script|indent(n)|safe}}</code></p>
+<p>“{{}}“ is the jinja representation of code<br>script is the script that you put in the render_template function<br>indent(n) means the number of spaces of where you put your script (Just for beautify your code)<br>safe means that Jinja won’t take care of some illegal symbol for you(like “&lt;&gt;”, which normally will be turned into “&lt;” and “&gt;”)</p>
+<p>So now you complete embed your bokeh app in your flask app. Run your app.py for a test!</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://chenhaolinolym.github.io/2019/07/17/deploy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -647,7 +945,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -696,7 +994,13 @@
         
           
         
-        <span class="site-state-item-count">17</span>
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">categories</span>
         </a>
       </div>
@@ -771,7 +1075,17 @@
         
           
         
-        <span class="site-state-item-count">30</span>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
@@ -813,7 +1127,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">  <a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank">粤ICP备19098205号 </a>&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -822,12 +1136,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">25k</span>
+    <span title="Symbols count total">37k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">23 mins.</span>
+    <span title="Reading time total">34 mins.</span>
 </div>
 
         

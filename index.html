@@ -256,6 +256,445 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://chenhaolinolym.github.io/2019/08/17/security/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Olym Chen">
+      <meta itemprop="description" content="Just a Blog">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Olym's Secret House">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/08/17/security/" class="post-title-link" itemprop="url">CS50 Beyond Security and Scalability</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-17 17:07:48" itemprop="dateCreated datePublished" datetime="2019-08-17T17:07:48+08:00">2019-08-17</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-18 15:56:23" itemprop="dateModified" datetime="2019-08-18T15:56:23+08:00">2019-08-18</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/note/CS50-Beyond/" itemprop="url" rel="index"><span itemprop="name">CS50 Beyond</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/note/CS50-Beyond/Security-and-Scalability/" itemprop="url" rel="index"><span itemprop="name">Security and Scalability</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              
+              <span>4.1k</span>
+            </span>
+          
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              
+              <span>4 mins.</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <iframe src="//player.bilibili.com/player.html?aid=58975882&cid=102776726&page=10" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500px"> </iframe>
+
+<h2 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p>Open souce has a trade-off, on one hand, everyone can see the source code so that everyone can help fix the bugs, on the other hand, everyone can look for potential vulnerabilities and then take advantage of it.</p>
+<p>Also, your git commit history is going to store the entire history, so if you make a commit that accidentally include your credentials. If you delete them in the later commit, the credentials are still there. That’s the potential risk. Be careful about that.</p>
+<h3 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h3><p>So when you are building your web application, you can save your key in the Environment Variable.</p>
+<p>In flask, you can set your secret key like this:</p>
+<p><code>app.config[&quot;SEVRET_KEY&quot;] = os.environ_get(&quot;SECRET_KEY&quot;)</code></p>
+<h3 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h3><h4 id="Store-Passwords"><a href="#Store-Passwords" class="headerlink" title="Store Passwords"></a>Store Passwords</h4><p>Don’t directly store the password in the database.</p>
+<p>Instead of directly store the password in the data base, you should store the hash version of password in the database.</p>
+<h4 id="SQL-Injection"><a href="#SQL-Injection" class="headerlink" title="SQL Injection"></a>SQL Injection</h4><p>Wherever you are making SQL queries, either use a library or do the escape yourself to prevent you from SQL injection attack.</p>
+<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p>Cross-Site Scripting:</p>
+<p>Attackers will inject client-side scripts into web pages viewed by other users.</p>
+<p>e.g. In Flask</p>
+<p>If your code is like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@app.route(&apos;/&lt;string:name&gt;&apos;)</span><br><span class="line">def hello(name):</span><br><span class="line">    return &quot;Hello,&quot;+name</span><br></pre></td></tr></table></figure>
+
+<p>When a viewer typed in <code>/&lt;script&gt;alert(&#39;hi&#39;)&lt;/script&gt;</code></p>
+<p>An alert ‘hi’ will be raised.</p>
+<p>This can also happens when you have a form for a user to submit.</p>
+<p><strong>Solution:</strong><br>For url inject, check “&lt;” and “&gt;” whenever you receive a request.</p>
+<p>For form submit, add CSRF token.</p>
+<p>CSRF token is a secret, user-specific token in all form submissions.</p>
+<h2 id="Scalability"><a href="#Scalability" class="headerlink" title="Scalability"></a>Scalability</h2><h3 id="Benchmarking"><a href="#Benchmarking" class="headerlink" title="Benchmarking"></a>Benchmarking</h3><p>A test to see how many user can a server support.</p>
+<p><strong>Solotions:</strong></p>
+<ul>
+<li>Vertical Scaling: Get a bigger server</li>
+<li>Horizontal Scaling: Get more server</li>
+</ul>
+<h4 id="Problems-for-Horizontal-Scaling"><a href="#Problems-for-Horizontal-Scaling" class="headerlink" title="Problems for Horizontal Scaling"></a>Problems for Horizontal Scaling</h4><ul>
+<li>How does the server communicate with each other?</li>
+<li>Which server does the user go to when the come to the website?</li>
+</ul>
+<p>Solution: add a load balancer</p>
+<h3 id="Load-Balancing"><a href="#Load-Balancing" class="headerlink" title="Load Balancing"></a>Load Balancing</h3><p>Methods to assign connections:</p>
+<ul>
+<li>Random Choice</li>
+<li>Round Robin</li>
+<li>Fewest Connections</li>
+</ul>
+<h3 id="Session-Aware-Load-Balancing"><a href="#Session-Aware-Load-Balancing" class="headerlink" title="Session-Aware Load Balancing"></a>Session-Aware Load Balancing</h3><p>User may store some information on the server, what happen when he goes to another server next time?</p>
+<p>So you need to store the session information. There are three ways to store them.</p>
+<ul>
+<li>Sticky Sessions (User always go to the same place)</li>
+<li>Sessions in Database</li>
+<li>Client-Side Sessions</li>
+</ul>
+<h3 id="Autoscaling"><a href="#Autoscaling" class="headerlink" title="Autoscaling"></a>Autoscaling</h3><p>Dynamically add servers to the Load Balancer.</p>
+<p>Use some sort of ping or heartbeat to make sure when a server is down, the load balancer knows.</p>
+<h3 id="Scaling-Databases"><a href="#Scaling-Databases" class="headerlink" title="Scaling Databases"></a>Scaling Databases</h3><p><img src="/2019/08/17/security/1.jpg" alt="1"></p>
+<p>But there’s another problem raised, a single database can only communicate with a limit number of connections.</p>
+<p>We use Database Replication to solve this problem</p>
+<h3 id="Database-Replication"><a href="#Database-Replication" class="headerlink" title="Database Replication"></a>Database Replication</h3><h4 id="Single-Primary-Replication"><a href="#Single-Primary-Replication" class="headerlink" title="Single-Primary Replication"></a>Single-Primary Replication</h4><p><img src="/2019/08/17/security/2.jpg" alt="2"></p>
+<p>In single-primary replication, you can read from a number of database but can only read from one database.</p>
+<p>The you update other database from the writable database.</p>
+<p>This only solve the read problem but does not solve the write problem.</p>
+<h4 id="Multi-Primary-Replication"><a href="#Multi-Primary-Replication" class="headerlink" title="Multi-Primary Replication"></a>Multi-Primary Replication</h4><p><img src="/2019/08/17/security/3.jpg" alt="3"></p>
+<p>Multi-Primary Replication solve the problem of read and write at the same time, but raise another problem: what if there’s conflicts?</p>
+<p>There can be a Git like system to solve this.</p>
+<h3 id="Caching"><a href="#Caching" class="headerlink" title="Caching"></a>Caching</h3><p>If we can store the data in some other place, we may not need to access the data base so often.</p>
+<h4 id="Client-Side-Caching"><a href="#Client-Side-Caching" class="headerlink" title="Client-Side Caching"></a>Client-Side Caching</h4><h5 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h5><p>Inside the HTTP headers, there’s a header called “Cache-Control”, where you can set the time of the data cache in the computer.</p>
+<p><code>Cache-Control: max-age=86400</code> means that if the user refresh the page less than 86400s after the first request, the browser will not make a request and use the cache data.</p>
+<h5 id="ETag"><a href="#ETag" class="headerlink" title="ETag"></a>ETag</h5><p>ETag is a tag that is unique for each version of a big file on the server.</p>
+<p>When a big file is sent to the client, the ETag will be attached.</p>
+<p>When a browser make a request with the ETag, the web applictaion will not send it again if it is the latest version of that file.</p>
+<h4 id="Server-Side-Caching"><a href="#Server-Side-Caching" class="headerlink" title="Server-Side Caching"></a>Server-Side Caching</h4><p><img src="/2019/08/17/security/4.jpg" alt="4"></p>
+<p>When there’s request to the database, the web applictaion will save a copy of it and the request inside of Cache, so the server can get the data more quickly in the cache and make less requests to the database.</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://chenhaolinolym.github.io/2019/08/17/react/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Olym Chen">
+      <meta itemprop="description" content="Just a Blog">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Olym's Secret House">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/08/17/react/" class="post-title-link" itemprop="url">CS50 Beyond React</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-17 14:05:49" itemprop="dateCreated datePublished" datetime="2019-08-17T14:05:49+08:00">2019-08-17</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-18 23:59:28" itemprop="dateModified" datetime="2019-08-18T23:59:28+08:00">2019-08-18</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/note/CS50-Beyond/" itemprop="url" rel="index"><span itemprop="name">CS50 Beyond</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/note/CS50-Beyond/React/" itemprop="url" rel="index"><span itemprop="name">React</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              
+              <span>4.9k</span>
+            </span>
+          
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              
+              <span>4 mins.</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <iframe src="//player.bilibili.com/player.html?aid=58975882&cid=102776522&page=8" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500px"> </iframe>
+
+<iframe src="//player.bilibili.com/player.html?aid=58975882&cid=102776867&page=9" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500px"> </iframe>
+
+<iframe src="//player.bilibili.com/player.html?aid=58975882&cid=102760014&page=12" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500px"> </iframe>
+
+<h2 id="Declarative"><a href="#Declarative" class="headerlink" title="Declarative"></a>Declarative</h2><p>Write code to tell the computer the way we want the web application to look like.</p>
+<h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><p>An extension of JavaScript.</p>
+<p>In JSX we can treat HTML elements as values of their own.</p>
+<h2 id="Packages"><a href="#Packages" class="headerlink" title="Packages"></a>Packages</h2><ul>
+<li>React(The React library)</li>
+<li>ReactDOM(Insert React components into webpage)</li>
+<li>Babel(Translate JSX into JS)</li>
+</ul>
+<p>Scripts CDN:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">React:</span><br><span class="line">&lt;script src=&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">ReactDOM:</span><br><span class="line">&lt;script src=&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">Babel:</span><br><span class="line">&lt;script src=&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+
+<h2 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h2><h3 id="Basic-Structure"><a href="#Basic-Structure" class="headerlink" title="Basic Structure"></a>Basic Structure</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class Hello extends React.Component &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The Hello class is a React component.</p>
+<p>Each component need something to determine what should show up on the page, so each component needs a render function.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Hello extends React.Component &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">    return &lt;p&gt;Hello!&lt;/p&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>So now all Hello class does is display a p tag.</p>
+<h3 id="Example1"><a href="#Example1" class="headerlink" title="Example1"></a>Example1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;codeexample1&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script type=&quot;text/babel&quot;&gt;</span><br><span class="line">    class Hello extends React.Component &#123;</span><br><span class="line">        render() &#123;</span><br><span class="line">            return (</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    This is render by React!</span><br><span class="line">                &lt;/p&gt;</span><br><span class="line">            );</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ReactDOM.render(&lt;Hello /&gt;, document.querySelector(&quot;#codeexample1&quot;));</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<div id="codeexample1"></div>
+<script type="text/babel">
+    class Hello extends React.Component {
+        render() {
+            return (
+                <p>
+                    This is render by React!
+                </p>
+            );
+        }
+    }
+    ReactDOM.render(<Hello />, document.querySelector("#codeexample1"));
+</script>
+
+<h3 id="Example2"><a href="#Example2" class="headerlink" title="Example2"></a>Example2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;codeexample2&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script type=&quot;text/babel&quot;&gt;</span><br><span class="line">    class Hello extends React.Component &#123;</span><br><span class="line">        render() &#123;</span><br><span class="line">            return (</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    This is render by React!</span><br><span class="line">                &lt;/p&gt;</span><br><span class="line">            );</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    class App extends React.Component &#123;</span><br><span class="line">        render() &#123;</span><br><span class="line">            return (</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                &lt;Hello/&gt;</span><br><span class="line">                &lt;p&gt;Above and below are two Hello class.&lt;/p&gt;</span><br><span class="line">                &lt;Hello/&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            )</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ReactDOM.render(&lt;App /&gt;, document.querySelector(&quot;#codeexample2&quot;));</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<div id="codeexample2"></div>
+<script type="text/babel">
+    class Hello extends React.Component {
+        render() {
+            return (
+                <p>
+                    This is render by React!
+                </p>
+            );
+        }
+    }
+    class App extends React.Component {
+        render() {
+            return (
+                <div>
+                <Hello/>
+                <p>Above and below are two Hello class.</p>
+                <Hello/>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(<App />, document.querySelector("#codeexample2"));
+</script>
+
+<h3 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h3><p>Some arguments that attached to a class.</p>
+<h3 id="Example3"><a href="#Example3" class="headerlink" title="Example3"></a>Example3</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;codeexample3&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script type=&quot;text/babel&quot;&gt;</span><br><span class="line">    class Hello extends React.Component &#123;</span><br><span class="line">        render() &#123;</span><br><span class="line">            return (</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    This is &#123;this.props.count&#125; &#123;this.props.name&#125;</span><br><span class="line">                &lt;/p&gt;</span><br><span class="line">            );</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    class App extends React.Component &#123;</span><br><span class="line">        render() &#123;</span><br><span class="line">            return (</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                &lt;Hello count=&quot;Number1&quot; name=&quot;Hello Class&quot;/&gt;</span><br><span class="line">                &lt;Hello count=&quot;Number2&quot; name=&quot;Hello Class&quot;/&gt;</span><br><span class="line">                &lt;Hello count=&quot;Number3&quot; name=&quot;Hello Class&quot;/&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            )</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ReactDOM.render(&lt;App /&gt;, document.querySelector(&quot;#codeexample3&quot;));</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<div id="codeexample3"></div>
+<script type="text/babel">
+    class Hello extends React.Component {
+        render() {
+            return (
+                <p>
+                    This is {this.props.count} {this.props.name}
+                </p>
+            );
+        }
+    }
+    class App extends React.Component {
+        render() {
+            return (
+                <div>
+                <Hello count="Number1" name="Hello Class"/>
+                <Hello count="Number2" name="Hello Class"/>
+                <Hello count="Number3" name="Hello Class"/>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(<App />, document.querySelector("#codeexample3"));
+</script>
+
+<p><strong>Set the default value:</strong></p>
+<p>Change <code>This is {this.props.name}</code> to <code>This is {this.props.name || &quot;Hello Class&quot;}</code></p>
+<p>So now you can use the Hello class without “name”: <code>&lt;Hello count=&quot;Number3&quot;/&gt;</code></p>
+<h2 id="State"><a href="#State" class="headerlink" title="State"></a>State</h2><p>In React, if you change the state of the application, the view of the application is going to change based on that.<br>So if you want to update the page, just change the state of the application, no need to refresh the whole page.</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://chenhaolinolym.github.io/2019/08/16/js/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -288,11 +727,19 @@
                 
               
 
-              <time title="Created: 2019-08-16 18:54:45 / Modified: 23:15:15" itemprop="dateCreated datePublished" datetime="2019-08-16T18:54:45+08:00">2019-08-16</time>
+              <time title="Created: 2019-08-16 18:54:45" itemprop="dateCreated datePublished" datetime="2019-08-16T18:54:45+08:00">2019-08-16</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-17 16:07:31" itemprop="dateModified" datetime="2019-08-17T16:07:31+08:00">2019-08-17</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -332,7 +779,7 @@
               
                 <span class="post-meta-item-text">Symbols count in article: </span>
               
-              <span>1.4k</span>
+              <span>4.6k</span>
             </span>
           
             <span class="post-meta-item" title="Reading time">
@@ -342,7 +789,7 @@
               
                 <span class="post-meta-item-text">Reading time &asymp;</span>
               
-              <span>1 mins.</span>
+              <span>4 mins.</span>
             </span>
           
 
@@ -356,7 +803,9 @@
 
       
           
-            <iframe src="//player.bilibili.com/player.html?aid=58975882&cid=102776550&page=3" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="700px" height="500px"> </iframe>
+            <iframe src="//player.bilibili.com/player.html?aid=58975882&cid=102776550&page=3" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500px"> </iframe>
+
+<iframe src="//player.bilibili.com/player.html?aid=58975882&cid=102776419&page=4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500px"> </iframe>
 
 <h2 id="Two-Ways-of-Adding-JS-in-HTML"><a href="#Two-Ways-of-Adding-JS-in-HTML" class="headerlink" title="Two Ways of Adding JS in HTML"></a>Two Ways of Adding JS in HTML</h2><h3 id="Script-Tag"><a href="#Script-Tag" class="headerlink" title="Script Tag"></a>Script Tag</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    your JS code</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
@@ -382,6 +831,109 @@
 <p>Used to fix the problem that JS code loaded at the front of the HTML document.</p>
 <h3 id="Arrow-Functions"><a href="#Arrow-Functions" class="headerlink" title="Arrow Functions"></a>Arrow Functions</h3><p><code>x =&gt; x*2</code></p>
 <p>Takes the left of the arrow and output the right of the arrow.</p>
+<h3 id="Local-Storage"><a href="#Local-Storage" class="headerlink" title="Local Storage"></a>Local Storage</h3><p>Local storage is a place where you can save the data locally forever. It’s about 5M. You can use this feature to save your data so that it won’t change when the user refresh the page.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Command</th>
+<th align="center">Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>localStorage.setItem(&quot;temp&quot;, arr)</code></td>
+<td align="center">Save arr locally to “temp”</td>
+</tr>
+<tr>
+<td align="center"><code>localStorage.getItem(&quot;temp&quot;)</code></td>
+<td align="center">Get the data in “temp”</td>
+</tr>
+<tr>
+<td align="center"><code>localStorage.removeItem(&quot;temp&quot;)</code></td>
+<td align="center">Remove “temp”</td>
+</tr>
+<tr>
+<td align="center"><code>localStorage.clear()</code></td>
+<td align="center">Clear local storage</td>
+</tr>
+</tbody></table>
+<h3 id="Window"><a href="#Window" class="headerlink" title="Window"></a>Window</h3><table>
+<thead>
+<tr>
+<th align="center">Property</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>window.innerHeight</code></td>
+<td align="center">Returns the height of the window’s content area</td>
+</tr>
+<tr>
+<td align="center"><code>window.innerWidth</code></td>
+<td align="center">Returns the width of the window’s content area</td>
+</tr>
+<tr>
+<td align="center"><code>window.scrollY</code></td>
+<td align="center">Returns the pixels that the current document has been scrolled from the top of the window</td>
+</tr>
+<tr>
+<td align="center"><code>document.body.offSetHeight</code></td>
+<td align="center">Returns the height of the whole document</td>
+</tr>
+</tbody></table>
+<p><img src="/2019/08/16/js/1.jpg" alt="window"></p>
+<h2 id="Animation"><a href="#Animation" class="headerlink" title="Animation"></a>Animation</h2><h3 id="CSS-Animation"><a href="#CSS-Animation" class="headerlink" title="CSS Animation"></a>CSS Animation</h3><h4 id="Keyframe"><a href="#Keyframe" class="headerlink" title="Keyframe"></a>Keyframe</h4><p>In &lt;style&gt; tag.</p>
+<h5 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">@keyframes grow &#123;</span><br><span class="line">    0% &#123;</span><br><span class="line">        left: 0%;</span><br><span class="line">        color: red;</span><br><span class="line">        font-size: 14px;</span><br><span class="line">    &#125;</span><br><span class="line">    50% &#123;</span><br><span class="line">        left: 50%;</span><br><span class="line">        color: blue;</span><br><span class="line">        font-size: 20px;</span><br><span class="line">    &#125;</span><br><span class="line">    100% &#123;</span><br><span class="line">        left: 0%;</span><br><span class="line">        color: green;</span><br><span class="line">        font-size: 26px;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    .example &#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        animation-name: grow;</span><br><span class="line">        animation-fill-mode: forwards;</span><br><span class="line">        animation-duration: 3s;</span><br><span class="line">        animation-iteration-count: infinite;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;p class=&quot;example&quot;&gt;Hello!&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="Effect"><a href="#Effect" class="headerlink" title="Effect"></a>Effect</h5><style>
+@keyframes grow {
+    0% {
+        left: 0%;
+        color: red;
+        font-size: 14px;
+    }
+    50% {
+        left: 50%;
+        color: blue;
+        font-size: 20px;
+    }
+    100% {
+        left: 0%;
+        color: green;
+        font-size: 26px;
+    }
+}
+    .example {
+        position: relative;
+        animation-name: grow;
+        animation-fill-mode: forwards;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+}
+</style>
+
+<p class="example">Hello!</p>
+
+<h3 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h3><p>SVG is the abbreviation of Scalable Vector Graphics<br>SVG is resolution independent, the resolution of it won’t change when zoom in.</p>
+<p>The following code is based on the d3.js library</p>
+<h4 id="Draw-Elements"><a href="#Draw-Elements" class="headerlink" title="Draw Elements"></a>Draw Elements</h4><script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg id=&quot;svgexample1&quot; stylt=&quot;width:100%; height:800px&quot;&gt;&lt;/svg&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">const svg = d3.select(&apos;#svgexample1&apos;);</span><br><span class="line"></span><br><span class="line">svg.append(&apos;circle&apos;)</span><br><span class="line">    .attr(&apos;cx&apos;, 200) (center x)</span><br><span class="line">    .attr(&apos;cy&apos;, 75)  (center y)</span><br><span class="line">    .attr(&apos;r&apos;, 50)   (radius)</span><br><span class="line">    .style(&apos;fill&apos;, &apos;red&apos;);   (filled color)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><svg id="svgexample1" stylt="width:100%; height:800px"/></p>
+<script>
+const svg = d3.select('#svgexample1');
+
+svg.append('circle')
+    .attr('cx', 200)
+    .attr('cy', 75)
+    .attr('r', 50)
+    .style('fill', 'red');
+</script>
+
+<h4 id="Animation-1"><a href="#Animation-1" class="headerlink" title="Animation"></a>Animation</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;svg id=&quot;svgexample2&quot; stylt=&quot;width:100%; height:800px&quot;&gt;&lt;/svg&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">const svg = d3.select(&apos;#svgexample2&apos;);</span><br><span class="line"></span><br><span class="line">const c = svg.append(&apos;circle&apos;)</span><br><span class="line">             .attr(&apos;cx&apos;, 200)</span><br><span class="line">             .attr(&apos;cy&apos;, 75)</span><br><span class="line">             .attr(&apos;r&apos;, 25)</span><br><span class="line">             .style(&apos;fill&apos;, &apos;red&apos;);</span><br><span class="line"></span><br><span class="line">c.transition()</span><br><span class="line"> .duration(1000)</span><br><span class="line"> .attr(&apos;cx&apos;, 500)</span><br><span class="line"> .style(&apos;fill&apos;, &apos;green&apos;)</span><br><span class="line"> .attr(&apos;r&apos;, 50)</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>The Code above will draw a red circle whose radius is 25, then the circle will move to the right while becomming bigger and turning ino green.</p>
 
           
         
@@ -452,7 +1004,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-16 23:16:59" itemprop="dateModified" datetime="2019-08-16T23:16:59+08:00">2019-08-16</time>
+                <time title="Modified: 2019-08-17 15:11:17" itemprop="dateModified" datetime="2019-08-17T15:11:17+08:00">2019-08-17</time>
               </span>
             
           
@@ -517,7 +1069,7 @@
 
       
           
-            <iframe src="//player.bilibili.com/player.html?aid=58975882&cid=102768936&page=2" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="700px" height="500px"> </iframe>
+            <iframe src="//player.bilibili.com/player.html?aid=58975882&cid=102768936&page=2" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500px"> </iframe>
 
 <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="HTML5-features"><a href="#HTML5-features" class="headerlink" title="HTML5 features"></a>HTML5 features</h3><h4 id="Common-HTML-elements"><a href="#Common-HTML-elements" class="headerlink" title="Common HTML elements"></a>Common HTML elements</h4><table>
 <thead>
@@ -818,7 +1370,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-16 23:16:23" itemprop="dateModified" datetime="2019-08-16T23:16:23+08:00">2019-08-16</time>
+                <time title="Modified: 2019-08-17 15:11:09" itemprop="dateModified" datetime="2019-08-17T15:11:09+08:00">2019-08-17</time>
               </span>
             
           
@@ -883,7 +1435,7 @@
 
       
           
-            <iframe src="//player.bilibili.com/player.html?aid=58975882&cid=102766022&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="700px" height="500px"> </iframe>
+            <iframe src="//player.bilibili.com/player.html?aid=58975882&cid=102766022&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500px"> </iframe>
 
 <h2 id="Git-Commands"><a href="#Git-Commands" class="headerlink" title="Git Commands"></a>Git Commands</h2><table>
 <thead>
@@ -1796,304 +2348,6 @@
   </article>
 
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://chenhaolinolym.github.io/2019/08/10/daterangeslider/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Olym Chen">
-      <meta itemprop="description" content="Just a Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Olym's Secret House">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2019/08/10/daterangeslider/" class="post-title-link" itemprop="url">Properties of Bokeh Daterangeslider that Helps Develop</a>
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-08-10 18:23:51" itemprop="dateCreated datePublished" datetime="2019-08-10T18:23:51+08:00">2019-08-10</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-13 22:33:28" itemprop="dateModified" datetime="2019-08-13T22:33:28+08:00">2019-08-13</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/article/" itemprop="url" rel="index"><span itemprop="name">article</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/article/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/article/python/bokeh/" itemprop="url" rel="index"><span itemprop="name">bokeh</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              
-              <span>991</span>
-            </span>
-          
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              
-              <span>1 mins.</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This article is about two special property of Daterangeslider in bokeh, which can help develop your bokeh app.</p>
-<p>My bokeh version is 1.3.1.</p>
-<h2 id="Body"><a href="#Body" class="headerlink" title="Body"></a>Body</h2><p>According to the <a href="https://bokeh.pydata.org/en/latest/docs/reference/models/widgets.sliders.html" target="_blank" rel="noopener">official documentation</a>, Bokeh Daterangeslider has two property method: <code>value_as_date</code> and <code>value_as_datetime</code>.</p>
-<p>Normally, when you called the on_change callback function, bokeh will return you a tuple of Unix timestamp in miliseconds. It’s very inconvinient to change the format of the datetime.</p>
-<p>So you can call <code>daterangeslider.value_as_date</code> or <code>daterangeslider.value_as_datetime</code> (remember this is property not method) in your callback function. Both will return you a tuple of datetime.date object, which can be conveniently turned into any format of datetime via its own strftime method.</p>
-<p>Yet anothor way of using property method doesn’t work.</p>
-<p>You can’t simply pass in <code>value_as_date</code> or <code>value_as_datetime</code> in the on_change method. </p>
-<p>e.g. <code>daterangeslider.on_change(&quot;value_as_date&quot;, on_change)</code></p>
-<p>This will raise an error</p>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://chenhaolinolym.github.io/2019/08/10/embed/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Olym Chen">
-      <meta itemprop="description" content="Just a Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Olym's Secret House">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2019/08/10/embed/" class="post-title-link" itemprop="url">Embed Bokeh Application in Flask</a>
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-08-10 17:57:14" itemprop="dateCreated datePublished" datetime="2019-08-10T17:57:14+08:00">2019-08-10</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-13 22:44:41" itemprop="dateModified" datetime="2019-08-13T22:44:41+08:00">2019-08-13</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/article/" itemprop="url" rel="index"><span itemprop="name">article</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/article/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/article/python/bokeh/" itemprop="url" rel="index"><span itemprop="name">bokeh</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              
-              <span>1.9k</span>
-            </span>
-          
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              
-              <span>2 mins.</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <p>This article is based on the <a href="https://bokeh.pydata.org/en/latest/docs/user_guide/embed.html" target="_blank" rel="noopener">official document</a> of Bokeh and is about embed bokeh application in flask using app sessions.</p>
-<p>What you need to do is to pull a session from a bokeh server, turn it into script and insert it into your template.</p>
-<p>So you need to set up a bokeh server first.</p>
-<p><code>bokeh serve --show &quot;your bokeh file address&quot;</code></p>
-<p>Keep it open.</p>
-<p>Due to Bokeh’s safety settings, you need to set <code>allow web-socket origin</code> to avoid errors when you are setting up your bokeh server.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">bokeh serve --show &quot;your bokeh file address&quot;</span><br><span class="line">--allow-websocket-origin=localhost:5006  (This is bokeh server&apos;s default port, if you reset the port, change it to the port you set)</span><br><span class="line">--allow-websocket-origin=&quot;your web page address that you want to embed your bokeh app&quot;</span><br></pre></td></tr></table></figure>
-
-<p>Then you need to complete your route function:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def bkapp_page():</span><br><span class="line">    with pull_session(url=&quot;http://localhost:5006/&#123;your bokeh file name&#125;&quot;) as session:</span><br><span class="line">        script = server_session(session_id=session.id, url=&apos;http://localhost:5006/&#123;your bokeh file name&#125;&apos;) (As the above, change the port if you reset it yourself)</span><br><span class="line">        return render_template(&quot;your template&quot;, script=script, template=&quot;Flask&quot;)</span><br></pre></td></tr></table></figure>
-
-<p>Don’t forget to import the functions you need</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from bokeh.client import pull_session</span><br><span class="line">from bokeh.embed import server_session</span><br></pre></td></tr></table></figure>
-
-<p>Finally, put the script into your template.</p>
-<p>In the body part of the template:</p>
-<p>Put in: <code>{{script|indent(n)|safe}}</code></p>
-<p>“{{}}“ is the jinja representation of code<br>script is the script that you put in the render_template function<br>indent(n) means the number of spaces of where you put your script (Just for beautify your code)<br>safe means that Jinja won’t take care of some illegal symbol for you(like “&lt;&gt;”, which normally will be turned into “&lt;” and “&gt;”)</p>
-<p>So now you complete embed your bokeh app in your flask app. Run your app.py for a test!</p>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </section>
 
   
@@ -2134,7 +2388,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -2183,7 +2437,13 @@
         
           
         
-        <span class="site-state-item-count">17</span>
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">categories</span>
         </a>
       </div>
@@ -2258,7 +2518,17 @@
         
           
         
-        <span class="site-state-item-count">30</span>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
@@ -2300,7 +2570,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">  <a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank">粤ICP备19098205号 </a>&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -2309,12 +2579,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">25k</span>
+    <span title="Symbols count total">37k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">23 mins.</span>
+    <span title="Reading time total">34 mins.</span>
 </div>
 
         
