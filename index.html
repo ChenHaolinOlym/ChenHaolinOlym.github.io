@@ -256,6 +256,470 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://chenhaolinolym.github.io/2019/08/19/python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Olym Chen">
+      <meta itemprop="description" content="Just a Blog">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Olym's Secret House">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/08/19/python/" class="post-title-link" itemprop="url">CS50 Beyond Python, Flask, OOP and AI</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-19 11:07:08 / Modified: 23:26:15" itemprop="dateCreated datePublished" datetime="2019-08-19T11:07:08+08:00">2019-08-19</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/note/CS50-Beyond/" itemprop="url" rel="index"><span itemprop="name">CS50 Beyond</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/note/CS50-Beyond/Python-Flask-OOP-and-AI/" itemprop="url" rel="index"><span itemprop="name">Python Flask OOP and AI</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              
+              <span>522</span>
+            </span>
+          
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              
+              <span>1 mins.</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <iframe src="//player.bilibili.com/player.html?aid=58975882&cid=102776514&page=7" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500px"> </iframe>
+
+<iframe src="//player.bilibili.com/player.html?aid=58975882&cid=102776153&page=5" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500px"> </iframe>
+
+<h2 id="Flask-Session"><a href="#Flask-Session" class="headerlink" title="Flask Session"></a>Flask Session</h2><p>We will use a flask extension called “flask_session”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">from flask import Flask, render_template, session</span><br><span class="line">from flask_session import Session</span><br><span class="line">from tempfile import mkdtemp</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line">app.config[&quot;SESSION_FILE_DIR&quot;] = mkdtemp()</span><br><span class="line">app.config[&quot;SESSION_PERMANENT&quot;] = False</span><br><span class="line">app.config[&quot;SESSION_TYPE&quot;] = &quot;filesystem&quot;</span><br><span class="line">Session(app)</span><br><span class="line"></span><br><span class="line">@app.route(&apos;/&apos;)</span><br><span class="line">def index():</span><br><span class="line">    return session</span><br></pre></td></tr></table></figure>
+
+<p>“session” is a dict that differ for every session. Store your temporary app data in it.</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://chenhaolinolym.github.io/2019/08/19/sql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Olym Chen">
+      <meta itemprop="description" content="Just a Blog">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Olym's Secret House">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/08/19/sql/" class="post-title-link" itemprop="url">CS50 Beyond SQL, ORMs, APIs</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-19 00:13:41" itemprop="dateCreated datePublished" datetime="2019-08-19T00:13:41+08:00">2019-08-19</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-20 20:49:48" itemprop="dateModified" datetime="2019-08-20T20:49:48+08:00">2019-08-20</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/note/CS50-Beyond/" itemprop="url" rel="index"><span itemprop="name">CS50 Beyond</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/note/CS50-Beyond/SQL-and-ORMs/" itemprop="url" rel="index"><span itemprop="name">SQL and ORMs</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/note/CS50-Beyond/SQL-and-ORMs/APIs/" itemprop="url" rel="index"><span itemprop="name">APIs</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              
+              <span>4.9k</span>
+            </span>
+          
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              
+              <span>4 mins.</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <iframe src="//player.bilibili.com/player.html?aid=58975882&cid=102777100&page=11" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500px"> </iframe>
+
+<iframe src="//player.bilibili.com/player.html?aid=58975882&cid=102807043&page=6" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500px"> </iframe>
+
+<p>In this course we use PostgreSQL.</p>
+<h2 id="Data-Types"><a href="#Data-Types" class="headerlink" title="Data Types"></a>Data Types</h2><table>
+<thead>
+<tr>
+<th align="center">Data Type</th>
+<th align="center">Usage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">INTEGER</td>
+<td align="center">Storing integer</td>
+</tr>
+<tr>
+<td align="center">DECIMAL</td>
+<td align="center">Storing floating point number</td>
+</tr>
+<tr>
+<td align="center">SERIAL</td>
+<td align="center">A SERIAL will increment every time(like AUTOINCREMENT in sqLite)</td>
+</tr>
+<tr>
+<td align="center">VARCHAR</td>
+<td align="center">For a number of characters</td>
+</tr>
+<tr>
+<td align="center">TIMESTAMP</td>
+<td align="center">Store time</td>
+</tr>
+<tr>
+<td align="center">BOOLEAN</td>
+<td align="center">Ture or False</td>
+</tr>
+<tr>
+<td align="center">ENUM</td>
+<td align="center">Fix finite number of values</td>
+</tr>
+</tbody></table>
+<h2 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h2><table>
+<thead>
+<tr>
+<th align="center">Constraints</th>
+<th align="center">Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">NOT NULL</td>
+<td align="center">Column cannot be empty</td>
+</tr>
+<tr>
+<td align="center">UNIQUE</td>
+<td align="center">All the data in that column should be unique</td>
+</tr>
+<tr>
+<td align="center">PRIMARY KEY</td>
+<td align="center">Primary key of the table. A table can have at most one primary key</td>
+</tr>
+<tr>
+<td align="center">DEFAULT</td>
+<td align="center">specify the default value of a column</td>
+</tr>
+<tr>
+<td align="center">CHECK</td>
+<td align="center">Used to enforce some constraints in the database</td>
+</tr>
+</tbody></table>
+<p><em>Example for CHECK:</em> CHECK A &gt; 0, means that you can’t add negative INTEGER to the column A</p>
+<h2 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h2><ul>
+<li>SUM</li>
+<li>COUNT</li>
+<li>MIN</li>
+<li>MAX</li>
+<li>AVG</li>
+</ul>
+<p><em>Example:</em> <code>SELECT SUM(*) FROM xxx</code>/<code>SELECT COUNT(*) FROM xxx</code><br>The database will return a column which column name is the function name.</p>
+<h2 id="SQLAlchemy"><a href="#SQLAlchemy" class="headerlink" title="SQLAlchemy"></a>SQLAlchemy</h2><p>Example code for using SQLAlchemy</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from sqlalchemy import create_engine</span><br><span class="line">from sqlalchemy.orm import scoped_session, sessionmaker</span><br><span class="line"></span><br><span class="line">engine = create_engine(&quot;database address&quot;)</span><br><span class="line">db = scoped_session(sessionmaker(bind=engine))</span><br></pre></td></tr></table></figure>
+
+<p>After that, use <code>db.execute</code> to retrieve data.</p>
+<p>SQLAlchemy can insert the arguments safely.<br>You should use the following way to weite the code.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.execute(&quot;INSERT INTO xxx VALUES (:a, :b, :c)&quot;, &#123;&quot;a&quot;: a, &quot;b&quot;: b, &quot;c&quot;: c&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="ORMs"><a href="#ORMs" class="headerlink" title="ORMs"></a>ORMs</h2><p>ORM stands for Object Relational Mapping.</p>
+<p>ORMs let you treat rows and tables inside of a database the same way you would treat an object and classes in an object oriented programming language.</p>
+<p>With ORM, you can use a class to reference a table.</p>
+<p>“flask_sqlalchemy” is a library that enables you to use sqlalchemy in flask application.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">from flask_sqlalchemy import SQLAlchemy</span><br><span class="line"></span><br><span class="line">db = SQLAlchemy()</span><br><span class="line"></span><br><span class="line">class Flight(db.Model):</span><br><span class="line">    __tablename__ = &quot;flight&quot; (your table name)</span><br><span class="line">    id = db.Column(db.Integer, primary_key=True)     (each represents a column)</span><br><span class="line">    origin = db.Column(db.String, nullable=False)</span><br><span class="line">    destination = db.Column(db.String, nullable=False)</span><br><span class="line">    duration = db.Column(db.Integer, nullable=False)</span><br></pre></td></tr></table></figure>
+
+<p>The route file:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">app = Flask(__name__)</span><br><span class="line">app.config[&quot;SQLALCHEMY_DATABASE_URI&quot;] = &quot;your database url&quot;</span><br><span class="line">app.config[&quot;SQLALCHEMY_TRACK_MODIFICATIONS&quot;] = False</span><br><span class="line">db.init_app(app)</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    f = open(&quot;flights.csv&quot;)</span><br><span class="line">    reader = csv.reader(f)</span><br><span class="line">    for origin, destination, duration in reader:</span><br><span class="line">        flight = Flight(origin=origin, destination=destination, duration=duration)</span><br><span class="line">        db.session.add(flight)</span><br><span class="line">        print(f&quot;Added flight from &#123;origin&#125; to &#123;destination&#125; lasting &#123;duration&#125; minutes.&quot;)</span><br><span class="line">    db.session.commit()</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    with app.app_context():</span><br><span class="line">        main()</span><br></pre></td></tr></table></figure>
+
+<p>Commands in SQLAlchemy:</p>
+<table>
+<thead>
+<tr>
+<th align="center">commands</th>
+<th align="center">usage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>db.create_all()</code></td>
+<td align="center">create table</td>
+</tr>
+<tr>
+<td align="center"><code>flight=Flight(origin=&#39;xxx&#39;, destination=&#39;xxx)</code><br><code>db.session.add(flight)</code></td>
+<td align="center">insert data</td>
+</tr>
+<tr>
+<td align="center"><code>Flight.query.all()</code></td>
+<td align="center"><code>SELECT * FROM flights</code></td>
+</tr>
+<tr>
+<td align="center"><code>Flight.query.filter_by(origin=&quot;Paris&quot;).all()</code></td>
+<td align="center"><code>SELECT * FROM flights WHERE origin = &#39;Paris&#39;</code></td>
+</tr>
+<tr>
+<td align="center"><code>Flight.query.filter_by(origin=&quot;Paris&quot;).count()</code></td>
+<td align="center"><code>SELECT COUNT(*) FROM flights WHERE origin = &#39;Paris&#39;</code></td>
+</tr>
+<tr>
+<td align="center"><code>Flight.query.filter_by(id=28).first()</code><br><code>Flight.query.get(28)</code></td>
+<td align="center"><code>SELECT * FROM flights WHERE id = 28</code></td>
+</tr>
+<tr>
+<td align="center"><code>flight = Flight.query.get(6)</code><br><code>flight.duration = 280</code></td>
+<td align="center"><code>UPDATE flights SET duration = 280 WHERE id = 6</code></td>
+</tr>
+<tr>
+<td align="center"><code>flight = Flight.query.get(28)</code><br><code>db.session.delete(flight)</code></td>
+<td align="center"><code>DELETE FROM flights WHERE id = 28</code></td>
+</tr>
+<tr>
+<td align="center"><code>db.session.commit()</code></td>
+<td align="center"><code>COMMIT</code></td>
+</tr>
+<tr>
+<td align="center"><code>Flight.query.order_by(Flight.origin).all()</code></td>
+<td align="center"><code>SELECT * FROM flights ORDER BY origin</code></td>
+</tr>
+<tr>
+<td align="center"><code>Flight.query.order_by(Flight.origin.desc()).all()</code></td>
+<td align="center"><code>SELECT * FROM flights ORDER BY origin DESC</code></td>
+</tr>
+<tr>
+<td align="center"><code>Flight.query.filter(Flight.origin != &quot;Paris&quot;).all()</code></td>
+<td align="center"><code>SELECT * FROM flights WHERE origin != &#39;Paris&#39;</code></td>
+</tr>
+<tr>
+<td align="center"><code>Flight.query.filter(Flight.origin.like(&quot;%a%&quot;)).all()</code></td>
+<td align="center"><code>SELECT * FROM flights WHERE origin LIKE &#39;%a%&#39;</code></td>
+</tr>
+<tr>
+<td align="center"><code>Flight.query.filter(Flight.origin.in_([&quot;Tokyo&quot;, &quot;Paris&quot;])).all()</code></td>
+<td align="center"><code>SELECT * FROM flights WHERE origin IN (&#39;Tokyo&#39;, &#39;Paris&#39;)</code></td>
+</tr>
+<tr>
+<td align="center"><code>Flight.query.filter(and_(Flight.origin == &quot;Paris&quot;, Flight.duration &gt; 500)).all()</code></td>
+<td align="center"><code>SELECT * FROM flights WHERE origin = &#39;Paris&#39; AND duration &gt; 500</code></td>
+</tr>
+<tr>
+<td align="center"><code>Flight.query.filter(or_(Flight.origin == &quot;Paris&quot;, Flight.duration &gt; 500)).all()</code></td>
+<td align="center"><code>SELECT * FROM flights WHERE origin = &#39;Paris&#39; OR duration &gt; 500</code></td>
+</tr>
+<tr>
+<td align="center"><code>db.session.query(Flight, Passenger).filter(Flight.id == Passenger.flight_id).all()</code></td>
+<td align="center"><code>SELECT * FROM flights JOIN passengers ON flights.id = passengers.fought_id</code></td>
+</tr>
+</tbody></table>
+<h2 id="APIs"><a href="#APIs" class="headerlink" title="APIs"></a>APIs</h2><h3 id="HTTP-Methods"><a href="#HTTP-Methods" class="headerlink" title="HTTP Methods"></a>HTTP Methods</h3><ul>
+<li>GET: retrieve resource</li>
+<li>POST: create a new resource</li>
+<li>PUT: replace a resource</li>
+<li>PATCH: update a resource</li>
+<li>DELETE: delete a resource</li>
+</ul>
+<h3 id="Status-Codes"><a href="#Status-Codes" class="headerlink" title="Status Codes"></a>Status Codes</h3><ul>
+<li>200 OK</li>
+<li>201 Created</li>
+<li>400 Bad Request</li>
+<li>403 Forbidden</li>
+<li>404 Not Found</li>
+<li>405 Method Not Allowed</li>
+<li>422 Unprocessable Entity</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://chenhaolinolym.github.io/2019/08/17/security/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -299,7 +763,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-18 15:56:23" itemprop="dateModified" datetime="2019-08-18T15:56:23+08:00">2019-08-18</time>
+                <time title="Modified: 2019-08-19 22:45:48" itemprop="dateModified" datetime="2019-08-19T22:45:48+08:00">2019-08-19</time>
               </span>
             
           
@@ -340,7 +804,7 @@
               
                 <span class="post-meta-item-text">Symbols count in article: </span>
               
-              <span>4.1k</span>
+              <span>4.3k</span>
             </span>
           
             <span class="post-meta-item" title="Reading time">
@@ -371,6 +835,7 @@
 <h3 id="Flask"><a href="#Flask" class="headerlink" title="Flask"></a>Flask</h3><p>So when you are building your web application, you can save your key in the Environment Variable.</p>
 <p>In flask, you can set your secret key like this:</p>
 <p><code>app.config[&quot;SEVRET_KEY&quot;] = os.environ_get(&quot;SECRET_KEY&quot;)</code></p>
+<p>The way to add environment variable is:<br><code>export SECRET_KEY=xxxxxxxxx</code> (for Mac)<br><code>set SECRET_KEY=xxxxxxxxx</code> (for Windows)</p>
 <h3 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h3><h4 id="Store-Passwords"><a href="#Store-Passwords" class="headerlink" title="Store Passwords"></a>Store Passwords</h4><p>Don’t directly store the password in the database.</p>
 <p>Instead of directly store the password in the data base, you should store the hash version of password in the database.</p>
 <h4 id="SQL-Injection"><a href="#SQL-Injection" class="headerlink" title="SQL Injection"></a>SQL Injection</h4><p>Wherever you are making SQL queries, either use a library or do the escape yourself to prevent you from SQL injection attack.</p>
@@ -500,7 +965,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-18 23:59:28" itemprop="dateModified" datetime="2019-08-18T23:59:28+08:00">2019-08-18</time>
+                <time title="Modified: 2019-08-19 22:59:15" itemprop="dateModified" datetime="2019-08-19T22:59:15+08:00">2019-08-19</time>
               </span>
             
           
@@ -541,7 +1006,7 @@
               
                 <span class="post-meta-item-text">Symbols count in article: </span>
               
-              <span>4.9k</span>
+              <span>9.1k</span>
             </span>
           
             <span class="post-meta-item" title="Reading time">
@@ -551,7 +1016,7 @@
               
                 <span class="post-meta-item-text">Reading time &asymp;</span>
               
-              <span>4 mins.</span>
+              <span>8 mins.</span>
             </span>
           
 
@@ -668,6 +1133,72 @@
 <p>Change <code>This is {this.props.name}</code> to <code>This is {this.props.name || &quot;Hello Class&quot;}</code></p>
 <p>So now you can use the Hello class without “name”: <code>&lt;Hello count=&quot;Number3&quot;/&gt;</code></p>
 <h2 id="State"><a href="#State" class="headerlink" title="State"></a>State</h2><p>In React, if you change the state of the application, the view of the application is going to change based on that.<br>So if you want to update the page, just change the state of the application, no need to refresh the whole page.</p>
+<h3 id="Construction-Function"><a href="#Construction-Function" class="headerlink" title="Construction Function"></a>Construction Function</h3><p>Construction function is a function Similar to the function <code>__init__</code> in python.<br>In React, construction function is <code>constructor(props)</code></p>
+<p>e.g.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Counter extends React.Component &#123;</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Because we are extending the React.Component, and our React codes for our components to work need to use these props, we need to add a line of code <code>super(props);</code></p>
+<h3 id="Example4"><a href="#Example4" class="headerlink" title="Example4"></a>Example4</h3><p>A counter class.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;codeexample4&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script type=&quot;text/babel&quot;&gt;</span><br><span class="line">    class Counter extends React.Component &#123;</span><br><span class="line">        constructor(props) &#123;</span><br><span class="line">            super(props);</span><br><span class="line">            this.state = &#123;</span><br><span class="line">                count: 0</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        render() &#123;</span><br><span class="line">            return (</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                    &lt;p&gt;&#123;this.state.count&#125;&lt;/p&gt;</span><br><span class="line">                    &lt;button onClick=&#123;this.increment&#125;&gt;+&lt;/button&gt;</span><br><span class="line">                    &lt;button onClick=&#123;this.dncrement&#125;&gt;-&lt;/button&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            );</span><br><span class="line">        &#125;</span><br><span class="line">        increment = () =&gt; &#123;</span><br><span class="line">            this.setState(oldState =&gt; (&#123;</span><br><span class="line">                count: oldState.count+1</span><br><span class="line">            &#125;));</span><br><span class="line">        &#125;</span><br><span class="line">        dncrement = () =&gt; &#123;</span><br><span class="line">            this.setState(oldState =&gt; (&#123;</span><br><span class="line">                count: oldState.count-1</span><br><span class="line">            &#125;));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    class App extends React.Component &#123;</span><br><span class="line">        render() &#123;</span><br><span class="line">            return (</span><br><span class="line">                &lt;div&gt;</span><br><span class="line">                    &lt;Counter /&gt;</span><br><span class="line">                    &lt;Counter /&gt;</span><br><span class="line">                    &lt;Counter /&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            )</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ReactDOM.render(&lt;App /&gt;, document.querySelector(&quot;#codeexample4&quot;));</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<div id="codeexample4"></div>
+<script type="text/babel">
+    class Counter extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                count: 0
+            }
+        }
+        render() {
+            return (
+                <div>
+                    <p>{this.state.count}</p>
+                    <button onClick={this.increment}>+</button>
+                    <button onClick={this.dncrement}>-</button>
+                </div>
+            );
+        }
+        increment = () => {
+            this.setState(oldState => ({
+                count: oldState.count+1
+            }));
+        }
+        dncrement = () => {
+            this.setState(oldState => ({
+                count: oldState.count-1
+            }));
+        }
+    }
+    class App extends React.Component {
+        render() {
+            return (
+                <div>
+                    <Counter />
+                    <Counter />
+                    <Counter />
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(<App />, document.querySelector("#codeexample4"));
+</script>
+
+<p><strong>NOTE:</strong> In React, you are not allow to modify the state directly, you need to use the setState function to change the state.</p>
+<p><strong>oldState:</strong> It is considered a poor design to reference this.state inside of the setState function. Because this may cause a race condition where you run two setState function at a similar time.<br>In practice, you should use a function to take in the state first, then change it based on your new function.<br>This function often called oldState</p>
+<p>So now when you render many Counter components, you can have many counters and each counter has its own state.</p>
+<p><em>Ternary Operator:</em> condition ? expressionIfTrue : expressionIfFalse</p>
+<h2 id="Some-Useful-JS-Tools"><a href="#Some-Useful-JS-Tools" class="headerlink" title="Some Useful JS Tools"></a>Some Useful JS Tools</h2><h3 id="List-Operation"><a href="#List-Operation" class="headerlink" title="List Operation"></a>List Operation</h3><h3 id="Copy-of-a-List"><a href="#Copy-of-a-List" class="headerlink" title="Copy of a List"></a>Copy of a List</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const list1 = [1, 2, 3, 4, 5];</span><br><span class="line">const list2 = [...list1];</span><br></pre></td></tr></table></figure>
+
+<h3 id="Copy-Then-Add"><a href="#Copy-Then-Add" class="headerlink" title="Copy Then Add"></a>Copy Then Add</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const list1 = [1, 2, 3, 4, 5];</span><br><span class="line">const list2 = [...list1, 6];</span><br></pre></td></tr></table></figure>
+
+<h3 id="Delete-From-List"><a href="#Delete-From-List" class="headerlink" title="Delete From List"></a>Delete From List</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const list1 = [1, 2, 3, 4, 5];</span><br><span class="line">list1.splice(3, 1);</span><br><span class="line">// Starting from index 3, pull out 1 argument.</span><br><span class="line">// list1 is now [1, 2, 3, 5]</span><br></pre></td></tr></table></figure>
+
+<h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><p>When you actually deploy your website, you would not want the browser to translate your JSX code everytime when someone open the webpage.<br>You need something to translate the JSX code to JS code before deploy for you.</p>
+<p>An app “create-react-app” is recommended.</p>
+<p>To install the “create-react-app”, you need Node.js.</p>
+<p>After you install the “create-react-app”, you can create a new React application just by type in <code>create-react-app Name-of-the-app</code> in the CLI.</p>
+<p>After you modify your code in the “src” directory, run <code>npm run build</code>, the program will build your application for you. Include translate JSX to JS.</p>
 
           
         
@@ -2082,272 +2613,6 @@ svg.append('circle')
   </article>
 
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://chenhaolinolym.github.io/2019/08/12/blueprint/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Olym Chen">
-      <meta itemprop="description" content="Just a Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Olym's Secret House">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2019/08/12/blueprint/" class="post-title-link" itemprop="url">Template and Static Folder Setting in Flask Blueprint</a>
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-08-12 16:50:39" itemprop="dateCreated datePublished" datetime="2019-08-12T16:50:39+08:00">2019-08-12</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-13 22:33:02" itemprop="dateModified" datetime="2019-08-13T22:33:02+08:00">2019-08-13</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/article/" itemprop="url" rel="index"><span itemprop="name">article</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/article/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/article/python/flask/" itemprop="url" rel="index"><span itemprop="name">flask</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              
-              <span>863</span>
-            </span>
-          
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              
-              <span>1 mins.</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <h2 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bp = Blueprint(xxxxxxx, template_folder=&apos;templates&apos;, static_folder=&apos;static&apos;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="How-to-Use"><a href="#How-to-Use" class="headerlink" title="How to Use"></a>How to Use</h2><p>Flask treat them differently:</p>
-<h3 id="Template-Folder"><a href="#Template-Folder" class="headerlink" title="Template Folder"></a>Template Folder</h3><p>For template folder, when you register your blueprint, flask will add the address of blueprint template folder into its config.</p>
-<p>All contents under all blueprint/original template folder will be treated as if they are in a same big folder “template”.</p>
-<p>If there are templates of the same name, Flask will search the original template folder first and then the blueprint folders.</p>
-<p>The solution is to create a folder with the same name in the blueprint’s template folder, so you can use it like your static folder.</p>
-<h3 id="Static-Folder"><a href="#Static-Folder" class="headerlink" title="Static Folder"></a>Static Folder</h3><p>For static folder, the blueprint’s static folder address will be register to the blueprint.</p>
-<p>So you can reference it wherever in your Flask app by: <code>&quot;blueprintName&quot;.static</code></p>
-
-          
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://chenhaolinolym.github.io/2019/08/12/xrange/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Olym Chen">
-      <meta itemprop="description" content="Just a Blog">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Olym's Secret House">
-    </span>
-      <header class="post-header">
-
-        
-          <h1 class="post-title" itemprop="name headline">
-              
-              <a href="/2019/08/12/xrange/" class="post-title-link" itemprop="url">Update Bokeh Figure's X/Y Range</a>
-            
-          </h1>
-        
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-08-12 12:05:30" itemprop="dateCreated datePublished" datetime="2019-08-12T12:05:30+08:00">2019-08-12</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-13 18:49:39" itemprop="dateModified" datetime="2019-08-13T18:49:39+08:00">2019-08-13</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              
-              <span>214</span>
-            </span>
-          
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              
-              <span>1 mins.</span>
-            </span>
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-            <p>To update bokeh figure’s x_range/y_range, you should use:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;plotname&quot;.x_range.start = xxx</span><br><span class="line">&quot;plotname&quot;.x_range.end = xxx</span><br><span class="line">&quot;plotname&quot;.y_range.start = xxx</span><br><span class="line">&quot;plotname&quot;.y_range.end = xxx</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </section>
 
   
@@ -2388,7 +2653,7 @@ svg.append('circle')
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -2443,7 +2708,11 @@ svg.append('circle')
         
           
         
-        <span class="site-state-item-count">19</span>
+          
+        
+          
+        
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">categories</span>
         </a>
       </div>
@@ -2528,7 +2797,13 @@ svg.append('circle')
         
           
         
-        <span class="site-state-item-count">33</span>
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
@@ -2549,6 +2824,18 @@ svg.append('circle')
   </div>
 
 
+  <div class="links-of-blogroll motion-element links-of-blogroll-block">
+    <div class="links-of-blogroll-title">
+      <i class="fa  fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://www.olym.xyz" title="http://www.olym.xyz" rel="noopener" target="_blank">Homepage</a>
+        </li>
+      
+    </ul>
+  </div>
 
         </div>
       </div>
@@ -2579,12 +2866,12 @@ svg.append('circle')
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">37k</span>
+    <span title="Symbols count total">47k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">34 mins.</span>
+    <span title="Reading time total">43 mins.</span>
 </div>
 
         
