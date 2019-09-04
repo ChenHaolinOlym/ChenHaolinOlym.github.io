@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[EIE2050 Week2]]></title>
     <url>%2F2019%2F09%2F04%2Fnote%2FEIE2050%2FEIE2050-Week2%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[The meaning of NumberWhat’s the meaning of $(123.456)_{10}$, $(101.101)_{2}$? What’s the meaning of $(abc.def)_{g}$? $(123.456)_{10} = 1*10^2+2*10^1+3*10^{0}+4*10^{-1}+5*10^{-2}+6*10^{-3}$ $(101.101)_{2} = 1*2^2+0*2^{1}+1*2^{0}+1*2^{-1}+0*2^{-2}+1*2^{-3}$ $(abc.def)_{g} = a*g^2+b*g^{1}+c*g^{0}+d*g^{-1}+e*g^{-2}+f*g^{-3}$]]></content>
       <categories>
         <category>note</category>
         <category>EIE2050</category>
@@ -16,7 +16,7 @@
   <entry>
     <title><![CDATA[tex]]></title>
     <url>%2F2019%2F09%2F03%2Fnote%2Ftex%2Ftex%2F</url>
-    <content type="text"><![CDATA[Name Symbol Code negation $\neg$ \lnot{} or \neg{} overline $\overline{overline}$ \overline{overline} and $\land$ \wedge{} or \land{} or $\vee$ \lor{} or \vee{} exclusive-or $\oplus$ \oplus{} equivalence $\equiv$ \equiv{} tautology $\top{}$ \top{} contradiction $\bot$ \bot{} universal quantification $\forall$ \forall{} existential quantification $\exists$ \exists{}]]></content>
+    <content type="text"><![CDATA[Commands Name Symbol Code negation $\neg$ \lnot{} or \neg{} overline $\overline{overline}$ \overline{overline} and $\land$ \wedge{} or \land{} or $\vee$ \lor{} or \vee{} exclusive-or $\oplus$ \oplus{} equivalence $\equiv$ \equiv{} tautology $\top{}$ \top{} contradiction $\bot$ \bot{} universal quantification $\forall$ \forall{} existential quantification $\exists$ \exists{} EscapesIn hexo Command Represents \_ _]]></content>
       <categories>
         <category>note</category>
         <category>tex</category>
@@ -191,10 +191,10 @@
         <category>python</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>python</tag>
         <tag>flask</tag>
         <tag>template</tag>
+        <tag>hexo</tag>
         <tag>jinja</tag>
       </tags>
   </entry>
