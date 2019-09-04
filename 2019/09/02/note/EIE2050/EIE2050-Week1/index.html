@@ -59,15 +59,21 @@
 <meta name="keywords" content="EIE2050,Digital Logic and Systems">
 <meta property="og:type" content="article">
 <meta property="og:title" content="EIE2050 Week1">
-<meta property="og:url" content="http://chenhaolinolym.github.io/2019/09/02/note/EIE2050/Week1/index.html">
+<meta property="og:url" content="http://chenhaolinolym.github.io/2019/09/02/note/EIE2050/EIE2050-Week1/index.html">
 <meta property="og:site_name" content="Olym&#39;s Secret House">
 <meta property="og:description" content="Before lectureThere’s a difference in mathematical logic(数理逻辑), digital logic(数字逻辑). A new programming language“AND”, “OR”, “NOT” can consist a programming language. And they are called logical gates.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-03T14:04:31.312Z">
+<meta property="og:image" content="http://chenhaolinolym.github.io/2019/09/02/note/EIE2050/EIE2050-Week1/1.jpg">
+<meta property="og:image" content="http://chenhaolinolym.github.io/2019/09/02/note/EIE2050/EIE2050-Week1/2.jpg">
+<meta property="og:image" content="http://chenhaolinolym.github.io/2019/09/02/note/EIE2050/EIE2050-Week1/3.jpg">
+<meta property="og:image" content="http://chenhaolinolym.github.io/2019/09/02/note/EIE2050/EIE2050-Week1/4.jpg">
+<meta property="og:image" content="http://chenhaolinolym.github.io/2019/09/02/note/EIE2050/EIE2050-Week1/5.jpg">
+<meta property="og:updated_time" content="2019-09-04T06:57:26.828Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EIE2050 Week1">
 <meta name="twitter:description" content="Before lectureThere’s a difference in mathematical logic(数理逻辑), digital logic(数字逻辑). A new programming language“AND”, “OR”, “NOT” can consist a programming language. And they are called logical gates.">
-  <link rel="canonical" href="http://chenhaolinolym.github.io/2019/09/02/note/EIE2050/Week1/">
+<meta name="twitter:image" content="http://chenhaolinolym.github.io/2019/09/02/note/EIE2050/EIE2050-Week1/1.jpg">
+  <link rel="canonical" href="http://chenhaolinolym.github.io/2019/09/02/note/EIE2050/EIE2050-Week1/">
 
 
 <script id="page-configurations">
@@ -258,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://chenhaolinolym.github.io/2019/09/02/note/EIE2050/Week1/">
+    <link itemprop="mainEntityOfPage" href="http://chenhaolinolym.github.io/2019/09/02/note/EIE2050/EIE2050-Week1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Olym Chen">
@@ -300,7 +306,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-03 22:04:31" itemprop="dateModified" datetime="2019-09-03T22:04:31+08:00">2019-09-03</time>
+                <time title="Modified: 2019-09-04 14:57:26" itemprop="dateModified" datetime="2019-09-04T14:57:26+08:00">2019-09-04</time>
               </span>
             
           
@@ -342,7 +348,7 @@
               
                 <span class="post-meta-item-text">Symbols count in article: </span>
               
-              <span>2k</span>
+              <span>2.7k</span>
             </span>
           
             <span class="post-meta-item" title="Reading time">
@@ -509,6 +515,19 @@
 <h2 id="Analog-模拟"><a href="#Analog-模拟" class="headerlink" title="Analog(模拟)"></a>Analog(模拟)</h2><p>It is a big problem: digital vs. analog</p>
 <p>From digital to analog:</p>
 <p>Sampling(采样) + Quantization(量化)</p>
+<p>Sampling: Select samples with the same time interval. (Avoid infinity in time)</p>
+<p>Quantization: For each sample point, approximate the amplitude/magnitude to finite precision.</p>
+<h2 id="Digital-Waveforms-and-Pulse-Definitions"><a href="#Digital-Waveforms-and-Pulse-Definitions" class="headerlink" title="Digital Waveforms and Pulse Definitions"></a>Digital Waveforms and Pulse Definitions</h2><p><img src="/2019/09/02/note/EIE2050/EIE2050-Week1/1.jpg" alt="1"><br><img src="/2019/09/02/note/EIE2050/EIE2050-Week1/2.jpg" alt="2"></p>
+<p><strong>clock</strong> is a <em>basic timing signal</em> that is an example of a periodic wave. It is used to synchronized actions.</p>
+<h2 id="Serial-串行-and-Parallel-并行-Data"><a href="#Serial-串行-and-Parallel-并行-Data" class="headerlink" title="Serial(串行) and Parallel(并行) Data"></a>Serial(串行) and Parallel(并行) Data</h2><p>Data can be transmitted by either serial transfer or parallel transfer.</p>
+<h2 id="Basic-Logic-Functions"><a href="#Basic-Logic-Functions" class="headerlink" title="Basic Logic Functions"></a>Basic Logic Functions</h2><p>AND:<br><img src="/2019/09/02/note/EIE2050/EIE2050-Week1/3.jpg" alt="3"></p>
+<p>OR:<br><img src="/2019/09/02/note/EIE2050/EIE2050-Week1/4.jpg" alt="4"></p>
+<p>NOT:<br><img src="/2019/09/02/note/EIE2050/EIE2050-Week1/5.jpg" alt="5"></p>
+<p>You can use the above three to design any logical functions.</p>
+<h2 id="Some-More-Key-Items"><a href="#Some-More-Key-Items" class="headerlink" title="Some More Key Items"></a>Some More Key Items</h2><ul>
+<li>Fixed-function Logic: A category of digital integrated circuits having functions that cannot be altered.</li>
+<li>Programmable logic: A category of digital integrated circuits capable of being programmed to perform specified functions.</li>
+</ul>
 
     </div>
 
@@ -546,7 +565,7 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/09/03/note/CSC3001/Week1/" rel="prev" title="CSC3001 Week1">
+                <a href="/2019/09/03/note/CSC3001/CSC3001-Week1/" rel="prev" title="CSC3001 Week1">
                   CSC3001 Week1 <i class="fa fa-chevron-right"></i>
                 </a>
               
@@ -605,7 +624,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -787,7 +806,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Before-lecture"><span class="nav-number">1.</span> <span class="nav-text">Before lecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-new-programming-language"><span class="nav-number">2.</span> <span class="nav-text">A new programming language</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#One-base-Half-Adder-加法器"><span class="nav-number">2.1.</span> <span class="nav-text">One-base Half Adder(加法器)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Binary-Add"><span class="nav-number">2.1.1.</span> <span class="nav-text">Binary Add</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Binary-Digital-Operation"><span class="nav-number">2.1.2.</span> <span class="nav-text">Binary Digital Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Truth-Table-真值表"><span class="nav-number">2.1.3.</span> <span class="nav-text">Truth Table(真值表)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n-base-Half-Adder"><span class="nav-number">2.2.</span> <span class="nav-text">n-base Half Adder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Full-Adder"><span class="nav-number">2.3.</span> <span class="nav-text">Full Adder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparitor-比较器"><span class="nav-number">2.4.</span> <span class="nav-text">Comparitor(比较器)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analog-模拟"><span class="nav-number">3.</span> <span class="nav-text">Analog(模拟)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Before-lecture"><span class="nav-number">1.</span> <span class="nav-text">Before lecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-new-programming-language"><span class="nav-number">2.</span> <span class="nav-text">A new programming language</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#One-base-Half-Adder-加法器"><span class="nav-number">2.1.</span> <span class="nav-text">One-base Half Adder(加法器)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Binary-Add"><span class="nav-number">2.1.1.</span> <span class="nav-text">Binary Add</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Binary-Digital-Operation"><span class="nav-number">2.1.2.</span> <span class="nav-text">Binary Digital Operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Truth-Table-真值表"><span class="nav-number">2.1.3.</span> <span class="nav-text">Truth Table(真值表)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n-base-Half-Adder"><span class="nav-number">2.2.</span> <span class="nav-text">n-base Half Adder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Full-Adder"><span class="nav-number">2.3.</span> <span class="nav-text">Full Adder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparitor-比较器"><span class="nav-number">2.4.</span> <span class="nav-text">Comparitor(比较器)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analog-模拟"><span class="nav-number">3.</span> <span class="nav-text">Analog(模拟)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Digital-Waveforms-and-Pulse-Definitions"><span class="nav-number">4.</span> <span class="nav-text">Digital Waveforms and Pulse Definitions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Serial-串行-and-Parallel-并行-Data"><span class="nav-number">5.</span> <span class="nav-text">Serial(串行) and Parallel(并行) Data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-Logic-Functions"><span class="nav-number">6.</span> <span class="nav-text">Basic Logic Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Some-More-Key-Items"><span class="nav-number">7.</span> <span class="nav-text">Some More Key Items</span></a></li></ol></div>
             
 
           </div>
@@ -821,12 +840,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">52k</span>
+    <span title="Symbols count total">53k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">47 mins.</span>
+    <span title="Reading time total">48 mins.</span>
 </div>
 
         

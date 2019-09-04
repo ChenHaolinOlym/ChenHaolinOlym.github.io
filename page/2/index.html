@@ -256,6 +256,224 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://chenhaolinolym.github.io/2019/08/15/note/CS50 Beyond/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Olym Chen">
+      <meta itemprop="description" content="Just a Blog">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Olym's Secret House">
+    </span>
+      <header class="post-header">
+
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+              <a href="/2019/08/15/note/CS50 Beyond/git/" class="post-title-link" itemprop="url">CS50 Beyond Git and Github</a>
+            
+          </h1>
+        
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-08-15 14:01:15" itemprop="dateCreated datePublished" datetime="2019-08-15T14:01:15+08:00">2019-08-15</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-29 13:48:31" itemprop="dateModified" datetime="2019-08-29T13:48:31+08:00">2019-08-29</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/note/CS50-Beyond/" itemprop="url" rel="index"><span itemprop="name">CS50 Beyond</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              
+              <span>2.1k</span>
+            </span>
+          
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              
+              <span>2 mins.</span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+            <iframe src="//player.bilibili.com/player.html?aid=58975882&cid=102766022&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500px"> </iframe>
+
+<h2 id="Git-Commands"><a href="#Git-Commands" class="headerlink" title="Git Commands"></a>Git Commands</h2><table>
+<thead>
+<tr>
+<th align="center">command</th>
+<th align="center">usage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>git clone &lt;url&gt;</code></td>
+<td align="center">Clone the repository to local</td>
+</tr>
+<tr>
+<td align="center"><code>git init</code></td>
+<td align="center">initiallize a repository locally</td>
+</tr>
+<tr>
+<td align="center"><code>git add &lt;filename&gt;</code></td>
+<td align="center">add the file to the workspace</td>
+</tr>
+<tr>
+<td align="center"><code>git commit -m &quot;message&quot;</code></td>
+<td align="center">commit the change in the workspace</td>
+</tr>
+<tr>
+<td align="center"><code>git status</code></td>
+<td align="center">Show the status of your files</td>
+</tr>
+<tr>
+<td align="center"><code>git push</code></td>
+<td align="center">push to remote repository</td>
+</tr>
+<tr>
+<td align="center"><code>git pull</code></td>
+<td align="center">pull from remote repository</td>
+</tr>
+<tr>
+<td align="center"><code>git commit -am &quot;message&quot;</code></td>
+<td align="center">add every untracked file into workspace then commit</td>
+</tr>
+<tr>
+<td align="center"><code>git log</code></td>
+<td align="center">show the log of git change</td>
+</tr>
+<tr>
+<td align="center"><code>git reset --hard &lt;commit&gt;</code></td>
+<td align="center">go back for one version</td>
+</tr>
+<tr>
+<td align="center"><code>git branch</code></td>
+<td align="center">show the branches that currently have</td>
+</tr>
+<tr>
+<td align="center"><code>git checkout -b &lt;branch name&gt;</code></td>
+<td align="center">create a new branch</td>
+</tr>
+<tr>
+<td align="center"><code>git checkout &lt;branch name&gt;</code></td>
+<td align="center">switch to an existed branch</td>
+</tr>
+<tr>
+<td align="center"><code>git merge &lt;branch name&gt;</code></td>
+<td align="center">merge current branch with that branch</td>
+</tr>
+<tr>
+<td align="center"><code>git branch -D &lt;branch name&gt;</code></td>
+<td align="center">delete the branch</td>
+</tr>
+</tbody></table>
+<h2 id="Pull-Request"><a href="#Pull-Request" class="headerlink" title="Pull Request"></a>Pull Request</h2><p>In industry, they don’t let everyone to modify the code base, instead, you should make change on different branch and then summit a pull request so that someone else can do a review and comment and then merge the branches.</p>
+<p>So pull request is a request to merge your branch into the master branch. And it is widely used in the inductry.</p>
+<h2 id="Sass"><a href="#Sass" class="headerlink" title="Sass"></a>Sass</h2><p>Sass is an extension of CSS that allows you to use variable and nesting.</p>
+<h3 id="Link-a-seperate-CSS-file"><a href="#Link-a-seperate-CSS-file" class="headerlink" title="Link a seperate CSS file"></a>Link a seperate CSS file</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;address of the css file&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Variable"><a href="#Variable" class="headerlink" title="Variable"></a>Variable</h3><p>For Sass file, file extension is <code>.css</code></p>
+<p><code>$</code> as the mark of variable, <code>$variable_name</code> is a complete variable</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$color: red;</span><br><span class="line"></span><br><span class="line">ul &#123;</span><br><span class="line">    color=$color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Above is a complete SASS file.</p>
+<h3 id="Compile"><a href="#Compile" class="headerlink" title="Compile"></a>Compile</h3><p>SASS file can’t be directly linked to the HTML file.</p>
+<p>Download the SASS program then run it, it will convert SASS file to CSS file for you.</p>
+<p>Use the command <code>sass xxx.scss xxx.css</code></p>
+<h3 id="Nesting"><a href="#Nesting" class="headerlink" title="Nesting"></a>Nesting</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    xxxxxx</span><br><span class="line"></span><br><span class="line">    p &#123;</span><br><span class="line">        xxxxx</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ul &#123;</span><br><span class="line">        xxxxx</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>You can use the above code to directly apply CSS to that structure in Sass.</p>
+<h3 id="Inheritence"><a href="#Inheritence" class="headerlink" title="Inheritence"></a>Inheritence</h3><p>Inheritence in Sass use the <code>%</code> sign.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">%extend &#123;</span><br><span class="line">    xxx</span><br><span class="line">    xxx</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#id &#123;</span><br><span class="line">    @extend %extend;</span><br><span class="line">    xxx</span><br><span class="line">    xxx</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Properties in %extend will also effect in #id</p>
+
+          
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://chenhaolinolym.github.io/2019/08/13/note/hexo/hexotips/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1714,7 +1932,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1913,12 +2131,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">52k</span>
+    <span title="Symbols count total">53k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">47 mins.</span>
+    <span title="Reading time total">48 mins.</span>
 </div>
 
         
@@ -2032,6 +2250,8 @@ if ($('body').find('div.pdf').length) {
   
 
   
+    
+      
     
       
     
