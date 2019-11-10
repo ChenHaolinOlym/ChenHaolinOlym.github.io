@@ -63,7 +63,7 @@
 <meta property="og:site_name" content="Olym&#39;s Secret House">
 <meta property="og:description" content="Modular Arithmetic, Chinese Remainder TheoremModular ArithmeticDefinition: $a \ \equiv b \ (\mod n) \ iff \  n|(a - b)$Modular Addition, Multiplication">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-31T14:55:38.070Z">
+<meta property="og:updated_time" content="2019-11-10T02:58:25.563Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSC3001 Week7">
 <meta name="twitter:description" content="Modular Arithmetic, Chinese Remainder TheoremModular ArithmeticDefinition: $a \ \equiv b \ (\mod n) \ iff \  n|(a - b)$Modular Addition, Multiplication">
@@ -300,7 +300,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-31 22:55:38" itemprop="dateModified" datetime="2019-10-31T22:55:38+08:00">2019-10-31</time>
+                <time title="Modified: 2019-11-10 10:58:25" itemprop="dateModified" datetime="2019-11-10T10:58:25+08:00">2019-11-10</time>
               </span>
             
           
@@ -510,7 +510,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -780,12 +780,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">120k</span>
+    <span title="Symbols count total">121k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:49</span>
+    <span title="Reading time total">1:50</span>
 </div>
 
         
@@ -898,6 +898,56 @@ if ($('body').find('div.pdf').length) {
 
   
 
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', function() {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
   
 
   

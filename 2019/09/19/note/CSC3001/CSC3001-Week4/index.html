@@ -65,7 +65,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://chenhaolinolym.github.io/2019/09/19/note/CSC3001/CSC3001-Week4/image-20191028214558403.png">
 <meta property="og:image" content="http://chenhaolinolym.github.io/2019/09/19/note/CSC3001/CSC3001-Week4/image-20191028220851756.png">
-<meta property="og:updated_time" content="2019-10-30T17:11:08.255Z">
+<meta property="og:updated_time" content="2019-11-10T03:01:22.956Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSC3001 Week4">
 <meta name="twitter:description" content="The Idea of Mathematical InductionObjective: Prove $\forall n \geq 0 \ P(n)$Universal Generalization: To prove a for-all statement is to prove that R(c) is true for any c, but this is often difficult">
@@ -303,7 +303,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-31 01:11:08" itemprop="dateModified" datetime="2019-10-31T01:11:08+08:00">2019-10-31</time>
+                <time title="Modified: 2019-11-10 11:01:22" itemprop="dateModified" datetime="2019-11-10T11:01:22+08:00">2019-11-10</time>
               </span>
             
           
@@ -599,7 +599,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -869,12 +869,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">120k</span>
+    <span title="Symbols count total">121k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:49</span>
+    <span title="Reading time total">1:50</span>
 </div>
 
         
@@ -987,6 +987,56 @@ if ($('body').find('div.pdf').length) {
 
   
 
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', function() {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
   
 
   

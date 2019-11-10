@@ -56,17 +56,18 @@
 </script>
 
   <meta name="description" content="TreesDefinitions A tree is a collection of nodes.  The collection can be empty .  Otherwise, a tree consists of a distinguished node r, called root, and zero or more nonempty (sub) trees $T_1$, $T_2$,">
-<meta name="keywords" content="CSC3100,Data Structure,Algorithm">
+<meta name="keywords" content="CSC3100,Data Structure,Algorithm,Trees">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSC3100 Week8">
+<meta property="og:title" content="CSC3100 Week8-10">
 <meta property="og:url" content="http://chenhaolinolym.github.io/2019/10/13/note/CSC3100/CSC3100-Week8-10/index.html">
 <meta property="og:site_name" content="Olym&#39;s Secret House">
 <meta property="og:description" content="TreesDefinitions A tree is a collection of nodes.  The collection can be empty .  Otherwise, a tree consists of a distinguished node r, called root, and zero or more nonempty (sub) trees $T_1$, $T_2$,">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://chenhaolinolym.github.io/2019/10/13/note/CSC3100/CSC3100-Week8-10/1.png">
-<meta property="og:updated_time" content="2019-11-01T14:44:51.305Z">
+<meta property="og:image" content="http://chenhaolinolym.github.io/2019/10/13/note/CSC3100/CSC3100-Week8-10/image-20191110105701357.png">
+<meta property="og:updated_time" content="2019-11-10T03:08:55.495Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSC3100 Week8">
+<meta name="twitter:title" content="CSC3100 Week8-10">
 <meta name="twitter:description" content="TreesDefinitions A tree is a collection of nodes.  The collection can be empty .  Otherwise, a tree consists of a distinguished node r, called root, and zero or more nonempty (sub) trees $T_1$, $T_2$,">
 <meta name="twitter:image" content="http://chenhaolinolym.github.io/2019/10/13/note/CSC3100/CSC3100-Week8-10/1.png">
   <link rel="canonical" href="http://chenhaolinolym.github.io/2019/10/13/note/CSC3100/CSC3100-Week8-10/">
@@ -83,7 +84,7 @@
   };
 </script>
 
-  <title>CSC3100 Week8 | Olym's Secret House</title>
+  <title>CSC3100 Week8-10 | Olym's Secret House</title>
   
 
 
@@ -274,7 +275,7 @@
       <header class="post-header">
 
         
-          <h1 class="post-title" itemprop="name headline">CSC3100 Week8
+          <h1 class="post-title" itemprop="name headline">CSC3100 Week8-10
 
             
           </h1>
@@ -302,7 +303,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-01 22:44:51" itemprop="dateModified" datetime="2019-11-01T22:44:51+08:00">2019-11-01</time>
+                <time title="Modified: 2019-11-10 11:08:55" itemprop="dateModified" datetime="2019-11-10T11:08:55+08:00">2019-11-10</time>
               </span>
             
           
@@ -344,7 +345,7 @@
               
                 <span class="post-meta-item-text">Symbols count in article: </span>
               
-              <span>2.6k</span>
+              <span>6.7k</span>
             </span>
           
             <span class="post-meta-item" title="Reading time">
@@ -354,7 +355,7 @@
               
                 <span class="post-meta-item-text">Reading time &asymp;</span>
               
-              <span>2 mins.</span>
+              <span>6 mins.</span>
             </span>
           
 
@@ -397,7 +398,7 @@
 <p>All leaves are at height 0.</p>
 <h2 id="Binary-Tree"><a href="#Binary-Tree" class="headerlink" title="Binary Tree"></a>Binary Tree</h2><p><strong>A Binary Tree is a tree</strong> in which no node can have more than two children (subtrees): $T_L$ and $T_R$, both of which could possibly be empty.</p>
 <p><strong>Strictly Binary Tree:</strong> Every non-leaf node in the tree has nonempty left and right sub-trees</p>
-<p><strong>Complete (full) binary tree:</strong>A complete binary tree of depth <em>d</em> is a strictly binary tree with all leaf nodes at level <em>d</em>.</p>
+<p><strong>Complete (full) binary tree:</strong> A complete binary tree of depth <em>d</em> is a strictly binary tree with all leaf nodes at level <em>d</em>.</p>
 <h3 id="Expression-Tree"><a href="#Expression-Tree" class="headerlink" title="Expression Tree"></a>Expression Tree</h3><p>$(a+b\times c) +((d\times e+f)\times g)$</p>
 <p><img src="/2019/10/13/note/CSC3100/CSC3100-Week8-10/1.png" alt="1"></p>
 <ol>
@@ -444,17 +445,152 @@
 </li>
 <li><p>Right: pointer to right child</p>
 </li>
-<li><p>p: pointer to parent (p [root [T]] = NIL)</p>
+<li><p>p: pointer to parent (p[root[T]] = NIL)</p>
 </li>
 </ul>
 <h3 id="Property"><a href="#Property" class="headerlink" title="Property"></a>Property</h3><p>For every node, T, in the tree:</p>
 <ul>
-<li>the key values in its left subtree are <em>smaller than</em> the key value of T. </li>
-<li>the key values in its right subtree are <em>larger than</em> the key value of T.</li>
+<li>the key values in its left subtree are <strong>all</strong> <em>smaller than</em> the key value of T. </li>
+<li>the key values in its right subtree are <strong>all</strong> <em>larger than</em> the key value of T.</li>
 </ul>
-<h3 id="Operations"><a href="#Operations" class="headerlink" title="Operations"></a>Operations</h3><p>Binary Tree support many dynamic set operations </p>
-<p>◦find, findMin, findMax, predecessor, successor, insert, delete</p>
-<h2 id="Red-Black-Tree"><a href="#Red-Black-Tree" class="headerlink" title="Red-Black Tree"></a>Red-Black Tree</h2><h2 id="AVL-Tree"><a href="#AVL-Tree" class="headerlink" title="AVL Tree"></a>AVL Tree</h2><h2 id="B-Tree"><a href="#B-Tree" class="headerlink" title="B-Tree"></a>B-Tree</h2>
+<h3 id="Operations"><a href="#Operations" class="headerlink" title="Operations"></a>Operations</h3><p>Binary Tree support many dynamic set operations:</p>
+<p>find, findMin, findMax, predecessor, successor, insert, delete</p>
+<h3 id="Running-Time"><a href="#Running-Time" class="headerlink" title="Running Time"></a>Running Time</h3><p><strong>On Average:</strong> $\Theta (\log n)$ The expected height of the tree is logn</p>
+<p><strong>Worst Case:</strong> $\Theta (n)$ The tree is a linear chain of <em>n</em> nodes.</p>
+<h3 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h3><p>Starting at the root, trace down a path by comparing k with the key of the current node:</p>
+<ul>
+<li>If the keys are equal: we have found the key</li>
+<li>If k &lt; key[x] search in the left subtree of x</li>
+<li>If k &gt; key[x] search in the right subtree of x</li>
+</ul>
+<p><strong>Running Time:</strong> O(h)</p>
+<h3 id="Finding-the-Minimum"><a href="#Finding-the-Minimum" class="headerlink" title="Finding the Minimum"></a>Finding the Minimum</h3><p>Following left child pointers from the root, until a NIL is encountered</p>
+<h3 id="Finding-the-Maximum"><a href="#Finding-the-Maximum" class="headerlink" title="Finding the Maximum"></a>Finding the Maximum</h3><p>Following right child pointers from the root, until a NIL is encountered  </p>
+<h3 id="Successor"><a href="#Successor" class="headerlink" title="Successor"></a>Successor</h3><h4 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h4><p>successor(x) = y, such that key[y] is the smallest key <em>&gt;</em> key[x]</p>
+<h4 id="Case-1"><a href="#Case-1" class="headerlink" title="Case 1"></a>Case 1</h4><p><strong>right(x) is not empty:</strong></p>
+<p>successor(x) = the minimum in right(x)</p>
+<h4 id="Case-2"><a href="#Case-2" class="headerlink" title="Case 2"></a>Case 2</h4><p><strong>right(x) is empty:</strong></p>
+<ul>
+<li><p>go up the tree until the current node is a left child: successor(x) is the parent of the current node</p>
+</li>
+<li><p>if you cannot go further (and you reached the root):  x is the largest element</p>
+</li>
+</ul>
+<h3 id="Predecessor"><a href="#Predecessor" class="headerlink" title="Predecessor"></a>Predecessor</h3><h4 id="Definition-1"><a href="#Definition-1" class="headerlink" title="Definition"></a>Definition</h4><p>predecessor(x) = y, such that key[y] is the biggest key &lt; key[x]</p>
+<h4 id="Case-1-1"><a href="#Case-1-1" class="headerlink" title="Case 1"></a>Case 1</h4><p><strong>left(x) is not empty:</strong></p>
+<p>predecessor(x) = the maximum in left(x)</p>
+<h4 id="Case-2-1"><a href="#Case-2-1" class="headerlink" title="Case 2"></a>Case 2</h4><p><strong>left(x) is empty:</strong></p>
+<ul>
+<li><p>go up the tree until the current node is a right child: predecessor(x) is the parent of the current node</p>
+</li>
+<li><p>if you cannot go further (and you reached the root):  x is the smallest element</p>
+</li>
+</ul>
+<h3 id="Insert"><a href="#Insert" class="headerlink" title="Insert"></a>Insert</h3><h4 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h4><p>Insert value v into a binary search tree</p>
+<h4 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h4><ul>
+<li><p>If key[x] &lt; v move to the right child of x, else move to the left child of x</p>
+</li>
+<li><p>When x is NIL, we found the correct position </p>
+</li>
+<li><p>If v &lt; key[y] insert the new node as y’s left child else insert it as y’s right child</p>
+</li>
+<li><p>Beginning at the root, go down the tree and maintain:</p>
+<ul>
+<li>Pointer x : traces the downward path (current node)</li>
+<li>Pointer y : parent of x (“trailing pointer”)</li>
+</ul>
+</li>
+</ul>
+<h3 id="Deletion"><a href="#Deletion" class="headerlink" title="Deletion"></a>Deletion</h3><h4 id="Goal-1"><a href="#Goal-1" class="headerlink" title="Goal"></a>Goal</h4><p>Delete a given node z from a binary search tree</p>
+<h4 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h4><h5 id="Case-1-2"><a href="#Case-1-2" class="headerlink" title="Case 1"></a>Case 1</h5><p><strong>z has no children</strong></p>
+<p>Delete z by making the parent of z point to NIL</p>
+<h5 id="Case-2-2"><a href="#Case-2-2" class="headerlink" title="Case 2"></a>Case 2</h5><p><strong>z has one child</strong></p>
+<p>Delete z by making the parent of z point to z’s child, instead of to z and link the parent with the new child</p>
+<h5 id="Case-3"><a href="#Case-3" class="headerlink" title="Case 3"></a>Case 3</h5><p><strong>z has two children</strong></p>
+<ul>
+<li><p>Find z’s <em>successor y</em> (the leftmost node in z’s right subtree)</p>
+</li>
+<li><p>y has either no children or one right child (but no left child), why?</p>
+</li>
+<li><p>Delete y from the tree (via Case 1 or 2)</p>
+</li>
+<li><p>Replace z’s key and satellite data with y’s</p>
+</li>
+</ul>
+<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><h4 id="Operations-on-Binary-Search-Trees"><a href="#Operations-on-Binary-Search-Trees" class="headerlink" title="Operations on Binary Search Trees"></a>Operations on Binary Search Trees</h4><table>
+<thead>
+<tr>
+<th align="center">Operations</th>
+<th>Time Complexity</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">SEARCH</td>
+<td>O(h)</td>
+</tr>
+<tr>
+<td align="center">PREDECESSOR</td>
+<td>O(h)</td>
+</tr>
+<tr>
+<td align="center">SUCCESOR</td>
+<td>O(h)</td>
+</tr>
+<tr>
+<td align="center">MINIMUM</td>
+<td>O(h)</td>
+</tr>
+<tr>
+<td align="center">MAXIMUM</td>
+<td>O(h)</td>
+</tr>
+<tr>
+<td align="center">INSERT</td>
+<td>O(h)</td>
+</tr>
+<tr>
+<td align="center">DELETE</td>
+<td>O(h)</td>
+</tr>
+</tbody></table>
+<p><strong>Note:</strong> These operations are fast if the height of the tree is small – otherwise their performance is similar to that of a linked list.</p>
+<h3 id="Issues"><a href="#Issues" class="headerlink" title="Issues"></a>Issues</h3><p>After a series of DELETION, the above algorithm favors making the <em>left sub-trees</em> <strong>deeper</strong> than the <em>right sub-trees</em>.</p>
+<h4 id="Possible-Solution"><a href="#Possible-Solution" class="headerlink" title="Possible Solution"></a>Possible Solution</h4><p>Try to eliminate the problem by randomly choosing between the smallest element in the right sub-tree and the largest in the left when replacing the deleted element (not rigorous and not prove it yet!!)</p>
+<h4 id="Proven-Solution"><a href="#Proven-Solution" class="headerlink" title="Proven Solution"></a>Proven Solution</h4><ul>
+<li>Red-Black Tree</li>
+<li>AVL Tree</li>
+</ul>
+<h2 id="Red-Black-Tree"><a href="#Red-Black-Tree" class="headerlink" title="Red-Black Tree"></a>Red-Black Tree</h2><ul>
+<li><p>Binary search tree with an additional attribute for its nodes: color which can be <strong><span style="color: red">red</span></strong> or <strong>black</strong></p>
+</li>
+<li><p>Restrict the way nodes can be colored on any path from the root to a leaf.</p>
+</li>
+<li><p>Ensures that no path is more than twice as long as any other path.</p>
+</li>
+<li><p>“Balanced” binary search trees guarantee an O(logn) running time.</p>
+</li>
+</ul>
+<h3 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h3><ol>
+<li>Every node is either red or black</li>
+<li>The root is black</li>
+<li>Every leaf (NIL) is black</li>
+<li>If a node is red, then both its children are black. No two consecutive red nodes on a simple path from the root to a leaf</li>
+<li>For each node, all paths from that node to descendant leaves contain the same number of black nodes</li>
+</ol>
+<h4 id="Black-Height"><a href="#Black-Height" class="headerlink" title="Black Height"></a>Black Height</h4><p><strong>Height of a node:</strong> the number of edges in the <strong>longest</strong> path to a leaf</p>
+<p><strong>Black-height</strong> of a node x: bh(x) is the number of black nodes (including NIL) on the path from x to a leaf, <strong><em>not counting x</em></strong></p>
+<p><img src="/2019/10/13/note/CSC3100/CSC3100-Week8-10/image-20191110105701357.png" alt="image-20191110105701357"></p>
+<h2 id="AVL-Tree"><a href="#AVL-Tree" class="headerlink" title="AVL Tree"></a>AVL Tree</h2><ul>
+<li><p>An AVL tree is a binary search tree with a balance condition</p>
+</li>
+<li><p>Invented by Georgy Adelson-Velsky and Evgenii Landis</p>
+</li>
+<li><p>The balance condition:</p>
+</li>
+<li><p>The height of the left and right subtrees can differ by at most 1. </p>
+</li>
+</ul>
+<h2 id="B-Tree"><a href="#B-Tree" class="headerlink" title="B-Tree"></a>B-Tree</h2><h3 id="Data-Layout-on-Disk"><a href="#Data-Layout-on-Disk" class="headerlink" title="Data Layout on Disk"></a>Data Layout on Disk</h3><h3 id="Motivation-for-B-Trees"><a href="#Motivation-for-B-Trees" class="headerlink" title="Motivation for B-Trees"></a>Motivation for B-Trees</h3>
     </div>
 
     
@@ -475,6 +611,8 @@
             
               <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
             
+              <a href="/tags/Trees/" rel="tag"># Trees</a>
+            
           </div>
         
 
@@ -493,8 +631,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/10/13/note/CSC3100/CSC3100-Week8/" rel="prev" title="CSC3100 Week8-10">
-                  CSC3100 Week8-10 <i class="fa fa-chevron-right"></i>
+                <a href="/2019/11/10/note/CSC3100/CSC3100-Week11/" rel="prev" title="CSC3100 Week11">
+                  CSC3100 Week11 <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -552,7 +690,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">54</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -788,7 +926,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Definitions"><span class="nav-number">1.</span> <span class="nav-text">Definitions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Root"><span class="nav-number">1.1.</span> <span class="nav-text">Root</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Edge"><span class="nav-number">1.2.</span> <span class="nav-text">Edge</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parent"><span class="nav-number">1.3.</span> <span class="nav-text">Parent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Child"><span class="nav-number">1.4.</span> <span class="nav-text">Child</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sibling"><span class="nav-number">1.5.</span> <span class="nav-text">Sibling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Leaf"><span class="nav-number">1.6.</span> <span class="nav-text">Leaf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Path"><span class="nav-number">1.7.</span> <span class="nav-text">Path</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Length-of-a-path"><span class="nav-number">1.7.1.</span> <span class="nav-text">Length of a path</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Depth"><span class="nav-number">1.8.</span> <span class="nav-text">Depth</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Height"><span class="nav-number">1.9.</span> <span class="nav-text">Height</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binary-Tree"><span class="nav-number">2.</span> <span class="nav-text">Binary Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Expression-Tree"><span class="nav-number">2.1.</span> <span class="nav-text">Expression Tree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Traversing-Strategy"><span class="nav-number">2.2.</span> <span class="nav-text">Traversing Strategy</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Preorder-depth-first"><span class="nav-number">2.2.1.</span> <span class="nav-text">Preorder (depth-first)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inorder"><span class="nav-number">2.2.2.</span> <span class="nav-text">Inorder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Postorder"><span class="nav-number">2.2.3.</span> <span class="nav-text">Postorder</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binary-Search-Tree"><span class="nav-number">3.</span> <span class="nav-text">Binary Search Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Property"><span class="nav-number">3.1.</span> <span class="nav-text">Property</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operations"><span class="nav-number">3.2.</span> <span class="nav-text">Operations</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Red-Black-Tree"><span class="nav-number">4.</span> <span class="nav-text">Red-Black Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AVL-Tree"><span class="nav-number">5.</span> <span class="nav-text">AVL Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Tree"><span class="nav-number">6.</span> <span class="nav-text">B-Tree</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Definitions"><span class="nav-number">1.</span> <span class="nav-text">Definitions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Root"><span class="nav-number">1.1.</span> <span class="nav-text">Root</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Edge"><span class="nav-number">1.2.</span> <span class="nav-text">Edge</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parent"><span class="nav-number">1.3.</span> <span class="nav-text">Parent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Child"><span class="nav-number">1.4.</span> <span class="nav-text">Child</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sibling"><span class="nav-number">1.5.</span> <span class="nav-text">Sibling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Leaf"><span class="nav-number">1.6.</span> <span class="nav-text">Leaf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Path"><span class="nav-number">1.7.</span> <span class="nav-text">Path</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Length-of-a-path"><span class="nav-number">1.7.1.</span> <span class="nav-text">Length of a path</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Depth"><span class="nav-number">1.8.</span> <span class="nav-text">Depth</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Height"><span class="nav-number">1.9.</span> <span class="nav-text">Height</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binary-Tree"><span class="nav-number">2.</span> <span class="nav-text">Binary Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Expression-Tree"><span class="nav-number">2.1.</span> <span class="nav-text">Expression Tree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Traversing-Strategy"><span class="nav-number">2.2.</span> <span class="nav-text">Traversing Strategy</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Preorder-depth-first"><span class="nav-number">2.2.1.</span> <span class="nav-text">Preorder (depth-first)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inorder"><span class="nav-number">2.2.2.</span> <span class="nav-text">Inorder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Postorder"><span class="nav-number">2.2.3.</span> <span class="nav-text">Postorder</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binary-Search-Tree"><span class="nav-number">3.</span> <span class="nav-text">Binary Search Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Property"><span class="nav-number">3.1.</span> <span class="nav-text">Property</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operations"><span class="nav-number">3.2.</span> <span class="nav-text">Operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Running-Time"><span class="nav-number">3.3.</span> <span class="nav-text">Running Time</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Search"><span class="nav-number">3.4.</span> <span class="nav-text">Search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-the-Minimum"><span class="nav-number">3.5.</span> <span class="nav-text">Finding the Minimum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-the-Maximum"><span class="nav-number">3.6.</span> <span class="nav-text">Finding the Maximum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Successor"><span class="nav-number">3.7.</span> <span class="nav-text">Successor</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Definition"><span class="nav-number">3.7.1.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-1"><span class="nav-number">3.7.2.</span> <span class="nav-text">Case 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-2"><span class="nav-number">3.7.3.</span> <span class="nav-text">Case 2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Predecessor"><span class="nav-number">3.8.</span> <span class="nav-text">Predecessor</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Definition-1"><span class="nav-number">3.8.1.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-1-1"><span class="nav-number">3.8.2.</span> <span class="nav-text">Case 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-2-1"><span class="nav-number">3.8.3.</span> <span class="nav-text">Case 2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert"><span class="nav-number">3.9.</span> <span class="nav-text">Insert</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Goal"><span class="nav-number">3.9.1.</span> <span class="nav-text">Goal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Method"><span class="nav-number">3.9.2.</span> <span class="nav-text">Method</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deletion"><span class="nav-number">3.10.</span> <span class="nav-text">Deletion</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Goal-1"><span class="nav-number">3.10.1.</span> <span class="nav-text">Goal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Idea"><span class="nav-number">3.10.2.</span> <span class="nav-text">Idea</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Case-1-2"><span class="nav-number">3.10.2.1.</span> <span class="nav-text">Case 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Case-2-2"><span class="nav-number">3.10.2.2.</span> <span class="nav-text">Case 2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Case-3"><span class="nav-number">3.10.2.3.</span> <span class="nav-text">Case 3</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary"><span class="nav-number">3.11.</span> <span class="nav-text">Summary</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Operations-on-Binary-Search-Trees"><span class="nav-number">3.11.1.</span> <span class="nav-text">Operations on Binary Search Trees</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Issues"><span class="nav-number">3.12.</span> <span class="nav-text">Issues</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Possible-Solution"><span class="nav-number">3.12.1.</span> <span class="nav-text">Possible Solution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Proven-Solution"><span class="nav-number">3.12.2.</span> <span class="nav-text">Proven Solution</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Red-Black-Tree"><span class="nav-number">4.</span> <span class="nav-text">Red-Black Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties"><span class="nav-number">4.1.</span> <span class="nav-text">Properties</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Black-Height"><span class="nav-number">4.1.1.</span> <span class="nav-text">Black Height</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AVL-Tree"><span class="nav-number">5.</span> <span class="nav-text">AVL Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Tree"><span class="nav-number">6.</span> <span class="nav-text">B-Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Layout-on-Disk"><span class="nav-number">6.1.</span> <span class="nav-text">Data Layout on Disk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Motivation-for-B-Trees"><span class="nav-number">6.2.</span> <span class="nav-text">Motivation for B-Trees</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -822,12 +960,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">120k</span>
+    <span title="Symbols count total">121k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:49</span>
+    <span title="Reading time total">1:50</span>
 </div>
 
         
