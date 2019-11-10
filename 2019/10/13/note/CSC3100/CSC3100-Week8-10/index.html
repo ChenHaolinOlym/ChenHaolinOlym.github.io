@@ -65,7 +65,9 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://chenhaolinolym.github.io/2019/10/13/note/CSC3100/CSC3100-Week8-10/1.png">
 <meta property="og:image" content="http://chenhaolinolym.github.io/2019/10/13/note/CSC3100/CSC3100-Week8-10/image-20191110105701357.png">
-<meta property="og:updated_time" content="2019-11-10T03:08:55.495Z">
+<meta property="og:image" content="http://chenhaolinolym.github.io/2019/10/13/note/CSC3100/CSC3100-Week8-10/image-20191110155018957.png">
+<meta property="og:image" content="http://chenhaolinolym.github.io/2019/10/13/note/CSC3100/CSC3100-Week8-10/image-20191110155553886.png">
+<meta property="og:updated_time" content="2019-11-10T08:25:19.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSC3100 Week8-10">
 <meta name="twitter:description" content="TreesDefinitions A tree is a collection of nodes.  The collection can be empty .  Otherwise, a tree consists of a distinguished node r, called root, and zero or more nonempty (sub) trees $T_1$, $T_2$,">
@@ -303,7 +305,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-10 11:08:55" itemprop="dateModified" datetime="2019-11-10T11:08:55+08:00">2019-11-10</time>
+                <time title="Modified: 2019-11-10 16:25:19" itemprop="dateModified" datetime="2019-11-10T16:25:19+08:00">2019-11-10</time>
               </span>
             
           
@@ -345,7 +347,7 @@
               
                 <span class="post-meta-item-text">Symbols count in article: </span>
               
-              <span>6.7k</span>
+              <span>11k</span>
             </span>
           
             <span class="post-meta-item" title="Reading time">
@@ -355,7 +357,7 @@
               
                 <span class="post-meta-item-text">Reading time &asymp;</span>
               
-              <span>6 mins.</span>
+              <span>10 mins.</span>
             </span>
           
 
@@ -577,20 +579,141 @@
 <li>If a node is red, then both its children are black. No two consecutive red nodes on a simple path from the root to a leaf</li>
 <li>For each node, all paths from that node to descendant leaves contain the same number of black nodes</li>
 </ol>
-<h4 id="Black-Height"><a href="#Black-Height" class="headerlink" title="Black Height"></a>Black Height</h4><p><strong>Height of a node:</strong> the number of edges in the <strong>longest</strong> path to a leaf</p>
+<h4 id="Black-Height"><a href="#Black-Height" class="headerlink" title="Black Height"></a>Black Height</h4><p><strong>Height</strong> of a node: the number of edges in the <strong>longest</strong> path to a leaf</p>
 <p><strong>Black-height</strong> of a node x: bh(x) is the number of black nodes (including NIL) on the path from x to a leaf, <strong><em>not counting x</em></strong></p>
 <p><img src="/2019/10/13/note/CSC3100/CSC3100-Week8-10/image-20191110105701357.png" alt="image-20191110105701357"></p>
+<h3 id="Height-of-Red-Black-Tree"><a href="#Height-of-Red-Black-Tree" class="headerlink" title="Height of Red-Black Tree"></a>Height of Red-Black Tree</h3><h4 id="Important-Property-of-Red-Black-Tree"><a href="#Important-Property-of-Red-Black-Tree" class="headerlink" title="Important Property of Red-Black Tree"></a>Important Property of Red-Black Tree</h4><p>A red-black tree with n internal nodes has height <strong>at most</strong> 2log(n+1)</p>
+<p>Need to prove two claims first:</p>
+<h5 id="Claim-1"><a href="#Claim-1" class="headerlink" title="Claim 1"></a>Claim 1</h5><p>Any node x with height h(x) has $bh(x) \geq \frac{h(x)}{2}  $</p>
+<p><strong>Proof:</strong></p>
+<p>By Properties 4, at most $\frac{h}{2}$ <strong><span style="color: red">red</span></strong> nodes on the path from the node to a leaf. So at least $\frac{h}{2}$ are <strong>black</strong>.</p>
+<h5 id="Claim-2"><a href="#Claim-2" class="headerlink" title="Claim 2"></a>Claim 2</h5><p>The subtree rooted at any node x contains <strong>at least</strong> $2^{bh(x)} - 1$ internal nodes. (Internal Nodes = All Nodes - Leaves)</p>
+<p><strong>Ptoof:</strong> By induction on h[x]</p>
+<p><strong>Basis:</strong> </p>
+<p>When h[x] = 0, x is a leaf, so bh(x) = 0 and the number of internal nodes is $0 = 2^0-1$</p>
+<p><strong>Inductive Hypothesis:</strong> Assume it is true for h[x]=h-1</p>
+<p><strong>Inductive Step:</strong> </p>
+<p>Let bh(x) = b, then any child y of x has: </p>
+<ul>
+<li>bh(y) = b(if the child is <strong><span style="color: red">red</span></strong>)</li>
+<li>bh(y) = b - 1(if the child is <strong>black</strong>)</li>
+</ul>
+<p>Using inductive hypothesis, the number of internal nodes for each child of x is at least (if it is <strong>black</strong>): $2^{bh(x) - 1} - 1$</p>
+<p>The subtree rooted at x contains at least:<br>$$<br>\begin{align}<br>&amp; (2^{bh(x) - 1} – 1) + (2^{bh(x) - 1} – 1) + 1\<br>= &amp; 2 \times (2^{bh(x) - 1} - 1) + 1\<br>= &amp; 2^{bh(x)} - 1<br>\end{align}<br>$$<br>internal nodes</p>
+<h5 id="Proof"><a href="#Proof" class="headerlink" title="Proof"></a>Proof</h5><p>$$<br>n \geq 2^{bh}-1 \geq 2^{\frac{h}{2}}-1<br>$$</p>
+<p>Using Claims.</p>
+<p>Add 1 to both sides and then take logs:<br>$$<br>\begin{align}<br>&amp; n+1 \geq 2^{bh} \geq 2^{\frac{h}{2}}\<br>\Rightarrow &amp; \lg(n+1) \geq \frac{h}{2}\<br>\Rightarrow &amp; h \leq 2 \lg(n+1)<br>\end{align}<br>$$</p>
+<h3 id="Operations-of-Red-Black-Tree"><a href="#Operations-of-Red-Black-Tree" class="headerlink" title="Operations of Red-Black Tree"></a>Operations of Red-Black Tree</h3><p>The non-modifying operations: <strong>MINIMUM</strong>, <strong>MAXIMUM</strong>, and <strong>SEARCH</strong> still run in O(h) time. They take O(logn) time on red-black trees because Red-Black Tree ensure that the height of the tree will be O(logn)</p>
+<p>For <strong>INSERT</strong> and <strong>DELETE</strong>, we have to guarantee that the modified tree will still be a Red-Black Tree.</p>
+<h4 id="Insert-1"><a href="#Insert-1" class="headerlink" title="Insert"></a>Insert</h4><p>What color to make the new node?</p>
+<h5 id="Red"><a href="#Red" class="headerlink" title="Red"></a>Red</h5><p>Property 4 <em>may be</em> violated: if a node is red, then both its children are black.</p>
+<h5 id="Black"><a href="#Black" class="headerlink" title="Black"></a>Black</h5><p>Property 5 <em>may be</em> violated: all paths from a node to its leaves contain the same number of black nodes  </p>
+<h4 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h4><p>What is the color of the node to be removed?</p>
+<h5 id="Red-1"><a href="#Red-1" class="headerlink" title="Red"></a>Red</h5><p>All properties will be fulfilled</p>
+<h5 id="Black-1"><a href="#Black-1" class="headerlink" title="Black"></a>Black</h5><p>Property 2 <em>may be</em> violated: The root is <strong>black</strong></p>
+<p>Property 4 <em>may be</em> violated: If a node is red, then both its children are <strong>black</strong></p>
+<p>Property 5 <em>may be</em> violated: For each node, all paths from the node to descendant leaves contain the same number of black nodes.</p>
+<h4 id="Rotations"><a href="#Rotations" class="headerlink" title="Rotations"></a>Rotations</h4><p>Operations for re-structuring the tree after insert and delete operations on red-black trees.</p>
+<p>Rotations take a red-black-tree and a node within the tree and:</p>
+<ul>
+<li><p>Together with some node re-coloring them and help restore the red-black-tree property</p>
+</li>
+<li><p>Change some of the pointer structure</p>
+</li>
+<li><p><strong>Do not</strong> change the binary-search tree property </p>
+</li>
+</ul>
+<h5 id="Two-Types-of-Rotations"><a href="#Two-Types-of-Rotations" class="headerlink" title="Two Types of Rotations"></a>Two Types of Rotations</h5><h6 id="Left-Rotations"><a href="#Left-Rotations" class="headerlink" title="Left Rotations"></a>Left Rotations</h6><h6 id="Right-Rotations"><a href="#Right-Rotations" class="headerlink" title="Right Rotations"></a>Right Rotations</h6><h4 id="Insert-with-Rotation"><a href="#Insert-with-Rotation" class="headerlink" title="Insert with Rotation"></a>Insert with Rotation</h4><h5 id="Analysis-of-INSERT"><a href="#Analysis-of-INSERT" class="headerlink" title="Analysis of INSERT"></a>Analysis of INSERT</h5><h3 id="Summary-1"><a href="#Summary-1" class="headerlink" title="Summary"></a>Summary</h3><ul>
+<li>Operations on red-black-trees:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Operations</th>
+<th>Time Complexity</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SEARCH</td>
+<td>O(h)/O(logn)</td>
+</tr>
+<tr>
+<td>PREDECESSOR</td>
+<td>O(h)/O(logn)</td>
+</tr>
+<tr>
+<td>SUCCESSOR</td>
+<td>O(h)/O(logn)</td>
+</tr>
+<tr>
+<td>MINIMUM</td>
+<td>O(h)/O(logn)</td>
+</tr>
+<tr>
+<td>MAXIMUM</td>
+<td>O(h)/O(logn)</td>
+</tr>
+<tr>
+<td>INSERT</td>
+<td>O(h)/O(logn)</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>O(h)/O(logn)</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Red-black-trees guarantee that the height of the tree will be O(logn)</li>
+</ul>
 <h2 id="AVL-Tree"><a href="#AVL-Tree" class="headerlink" title="AVL Tree"></a>AVL Tree</h2><ul>
 <li><p>An AVL tree is a binary search tree with a balance condition</p>
 </li>
 <li><p>Invented by Georgy Adelson-Velsky and Evgenii Landis</p>
 </li>
-<li><p>The balance condition:</p>
-</li>
-<li><p>The height of the left and right subtrees can differ by at most 1. </p>
+<li><p>The balance condition: <strong>The height of the left and right subtrees can differ by at most 1.</strong> </p>
 </li>
 </ul>
-<h2 id="B-Tree"><a href="#B-Tree" class="headerlink" title="B-Tree"></a>B-Tree</h2><h3 id="Data-Layout-on-Disk"><a href="#Data-Layout-on-Disk" class="headerlink" title="Data Layout on Disk"></a>Data Layout on Disk</h3><h3 id="Motivation-for-B-Trees"><a href="#Motivation-for-B-Trees" class="headerlink" title="Motivation for B-Trees"></a>Motivation for B-Trees</h3>
+<h3 id="Tree-Height"><a href="#Tree-Height" class="headerlink" title="Tree Height"></a>Tree Height</h3><h3 id="Node-Height"><a href="#Node-Height" class="headerlink" title="Node Height"></a>Node Height</h3><h3 id="Red-Black-Tree-vs-AVL-Tree"><a href="#Red-Black-Tree-vs-AVL-Tree" class="headerlink" title="Red-Black Tree vs. AVL Tree"></a>Red-Black Tree vs. AVL Tree</h3><h2 id="Large-Data-Application"><a href="#Large-Data-Application" class="headerlink" title="Large Data Application"></a>Large Data Application</h2><h2 id="B-Tree"><a href="#B-Tree" class="headerlink" title="B-Tree"></a>B-Tree</h2><h3 id="Motivation-for-B-Trees"><a href="#Motivation-for-B-Trees" class="headerlink" title="Motivation for B-Trees"></a>Motivation for B-Trees</h3><h4 id="Data-Layout-on-Disk"><a href="#Data-Layout-on-Disk" class="headerlink" title="Data Layout on Disk"></a>Data Layout on Disk</h4><ul>
+<li><p>Track: one ring</p>
+</li>
+<li><p>Sector: one pie-shaped piece.</p>
+</li>
+<li><p>Block: intersection of a track and a sector – minimum unit for disk storage.</p>
+</li>
+</ul>
+<p><img src="/2019/10/13/note/CSC3100/CSC3100-Week8-10/image-20191110155018957.png" alt="image-20191110155018957"></p>
+<h4 id="Disk-Block-Access-Time"><a href="#Disk-Block-Access-Time" class="headerlink" title="Disk Block Access Time"></a>Disk Block Access Time</h4><ul>
+<li>Seek Time = Time for the disk head to move to the correct track + Time for the beginning of the correct sector to spin round to the head. </li>
+<li>Transfer Time = Time to read or write the data in blocks.  </li>
+<li>For a 7200 RPM hard disk, one revolution occurs in 1/120 of a second. Seek time is about 8.4 ms and average transfer time for a block is about 12 ms. </li>
+<li>Random Access Memory (RAM) takes nanoseconds to read from or write to, 100,000 times faster than disk.</li>
+</ul>
+<h4 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h4><ul>
+<li><p>Index structures for large datasets cannot be stored in main memory</p>
+</li>
+<li><p>Storing it on disk requires different approach to efficiency. (Can’t afford too many disk access)</p>
+</li>
+<li><p>The disk access needs to be optimized. (One access reads more data)</p>
+</li>
+<li><p>Need an efficient disk based indexing method.</p>
+</li>
+</ul>
+<h4 id="Limitation-of-Binary-Tree"><a href="#Limitation-of-Binary-Tree" class="headerlink" title="Limitation of Binary Tree"></a>Limitation of Binary Tree</h4><ul>
+<li><p>Assume that we use an AVL tree to store about 20 million records and all indexes are stored on disk.</p>
+</li>
+<li><p>A <strong>very</strong> deep binary tree with lots of different disk accesses; log2 20,000,000 is about 24, so this takes about 0.3 seconds </p>
+</li>
+<li><p>The log<em>n</em> lower bound on search for a binary tree. How to improve?</p>
+</li>
+<li><p>The solution is to use more branches and thus reduce the height of the tree!</p>
+<ul>
+<li>As branching increases, depth decreases</li>
+</ul>
+</li>
+</ul>
+<h3 id="B-Trees"><a href="#B-Trees" class="headerlink" title="B-Trees"></a>B-Trees</h3><p>e.g. B-tree of order 4:<br><img src="/2019/10/13/note/CSC3100/CSC3100-Week8-10/image-20191110155553886.png" alt="image-20191110155553886"></p>
+<p><strong>Note:</strong> B-Tree do not require that each node always be full. Empty space will permit insertion without rebalancing. Allowing empty space after a deletion can also avoid rebalancing.</p>
+<h3 id="Tree-Based-Indexing"><a href="#Tree-Based-Indexing" class="headerlink" title="Tree-Based Indexing"></a>Tree-Based Indexing</h3><h3 id="Constructing-a-B-Tree"><a href="#Constructing-a-B-Tree" class="headerlink" title="Constructing a B-Tree"></a>Constructing a B-Tree</h3><h3 id="Insert-2"><a href="#Insert-2" class="headerlink" title="Insert"></a>Insert</h3><h3 id="Delete-1"><a href="#Delete-1" class="headerlink" title="Delete"></a>Delete</h3><h3 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h3><h3 id="Compares"><a href="#Compares" class="headerlink" title="Compares"></a>Compares</h3>
     </div>
 
     
@@ -926,7 +1049,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Definitions"><span class="nav-number">1.</span> <span class="nav-text">Definitions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Root"><span class="nav-number">1.1.</span> <span class="nav-text">Root</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Edge"><span class="nav-number">1.2.</span> <span class="nav-text">Edge</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parent"><span class="nav-number">1.3.</span> <span class="nav-text">Parent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Child"><span class="nav-number">1.4.</span> <span class="nav-text">Child</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sibling"><span class="nav-number">1.5.</span> <span class="nav-text">Sibling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Leaf"><span class="nav-number">1.6.</span> <span class="nav-text">Leaf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Path"><span class="nav-number">1.7.</span> <span class="nav-text">Path</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Length-of-a-path"><span class="nav-number">1.7.1.</span> <span class="nav-text">Length of a path</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Depth"><span class="nav-number">1.8.</span> <span class="nav-text">Depth</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Height"><span class="nav-number">1.9.</span> <span class="nav-text">Height</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binary-Tree"><span class="nav-number">2.</span> <span class="nav-text">Binary Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Expression-Tree"><span class="nav-number">2.1.</span> <span class="nav-text">Expression Tree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Traversing-Strategy"><span class="nav-number">2.2.</span> <span class="nav-text">Traversing Strategy</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Preorder-depth-first"><span class="nav-number">2.2.1.</span> <span class="nav-text">Preorder (depth-first)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inorder"><span class="nav-number">2.2.2.</span> <span class="nav-text">Inorder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Postorder"><span class="nav-number">2.2.3.</span> <span class="nav-text">Postorder</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binary-Search-Tree"><span class="nav-number">3.</span> <span class="nav-text">Binary Search Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Property"><span class="nav-number">3.1.</span> <span class="nav-text">Property</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operations"><span class="nav-number">3.2.</span> <span class="nav-text">Operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Running-Time"><span class="nav-number">3.3.</span> <span class="nav-text">Running Time</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Search"><span class="nav-number">3.4.</span> <span class="nav-text">Search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-the-Minimum"><span class="nav-number">3.5.</span> <span class="nav-text">Finding the Minimum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-the-Maximum"><span class="nav-number">3.6.</span> <span class="nav-text">Finding the Maximum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Successor"><span class="nav-number">3.7.</span> <span class="nav-text">Successor</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Definition"><span class="nav-number">3.7.1.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-1"><span class="nav-number">3.7.2.</span> <span class="nav-text">Case 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-2"><span class="nav-number">3.7.3.</span> <span class="nav-text">Case 2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Predecessor"><span class="nav-number">3.8.</span> <span class="nav-text">Predecessor</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Definition-1"><span class="nav-number">3.8.1.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-1-1"><span class="nav-number">3.8.2.</span> <span class="nav-text">Case 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-2-1"><span class="nav-number">3.8.3.</span> <span class="nav-text">Case 2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert"><span class="nav-number">3.9.</span> <span class="nav-text">Insert</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Goal"><span class="nav-number">3.9.1.</span> <span class="nav-text">Goal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Method"><span class="nav-number">3.9.2.</span> <span class="nav-text">Method</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deletion"><span class="nav-number">3.10.</span> <span class="nav-text">Deletion</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Goal-1"><span class="nav-number">3.10.1.</span> <span class="nav-text">Goal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Idea"><span class="nav-number">3.10.2.</span> <span class="nav-text">Idea</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Case-1-2"><span class="nav-number">3.10.2.1.</span> <span class="nav-text">Case 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Case-2-2"><span class="nav-number">3.10.2.2.</span> <span class="nav-text">Case 2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Case-3"><span class="nav-number">3.10.2.3.</span> <span class="nav-text">Case 3</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary"><span class="nav-number">3.11.</span> <span class="nav-text">Summary</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Operations-on-Binary-Search-Trees"><span class="nav-number">3.11.1.</span> <span class="nav-text">Operations on Binary Search Trees</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Issues"><span class="nav-number">3.12.</span> <span class="nav-text">Issues</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Possible-Solution"><span class="nav-number">3.12.1.</span> <span class="nav-text">Possible Solution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Proven-Solution"><span class="nav-number">3.12.2.</span> <span class="nav-text">Proven Solution</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Red-Black-Tree"><span class="nav-number">4.</span> <span class="nav-text">Red-Black Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties"><span class="nav-number">4.1.</span> <span class="nav-text">Properties</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Black-Height"><span class="nav-number">4.1.1.</span> <span class="nav-text">Black Height</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AVL-Tree"><span class="nav-number">5.</span> <span class="nav-text">AVL Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Tree"><span class="nav-number">6.</span> <span class="nav-text">B-Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Layout-on-Disk"><span class="nav-number">6.1.</span> <span class="nav-text">Data Layout on Disk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Motivation-for-B-Trees"><span class="nav-number">6.2.</span> <span class="nav-text">Motivation for B-Trees</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Definitions"><span class="nav-number">1.</span> <span class="nav-text">Definitions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Root"><span class="nav-number">1.1.</span> <span class="nav-text">Root</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Edge"><span class="nav-number">1.2.</span> <span class="nav-text">Edge</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parent"><span class="nav-number">1.3.</span> <span class="nav-text">Parent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Child"><span class="nav-number">1.4.</span> <span class="nav-text">Child</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sibling"><span class="nav-number">1.5.</span> <span class="nav-text">Sibling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Leaf"><span class="nav-number">1.6.</span> <span class="nav-text">Leaf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Path"><span class="nav-number">1.7.</span> <span class="nav-text">Path</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Length-of-a-path"><span class="nav-number">1.7.1.</span> <span class="nav-text">Length of a path</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Depth"><span class="nav-number">1.8.</span> <span class="nav-text">Depth</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Height"><span class="nav-number">1.9.</span> <span class="nav-text">Height</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binary-Tree"><span class="nav-number">2.</span> <span class="nav-text">Binary Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Expression-Tree"><span class="nav-number">2.1.</span> <span class="nav-text">Expression Tree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Traversing-Strategy"><span class="nav-number">2.2.</span> <span class="nav-text">Traversing Strategy</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Preorder-depth-first"><span class="nav-number">2.2.1.</span> <span class="nav-text">Preorder (depth-first)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Inorder"><span class="nav-number">2.2.2.</span> <span class="nav-text">Inorder</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Postorder"><span class="nav-number">2.2.3.</span> <span class="nav-text">Postorder</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binary-Search-Tree"><span class="nav-number">3.</span> <span class="nav-text">Binary Search Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Property"><span class="nav-number">3.1.</span> <span class="nav-text">Property</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operations"><span class="nav-number">3.2.</span> <span class="nav-text">Operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Running-Time"><span class="nav-number">3.3.</span> <span class="nav-text">Running Time</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Search"><span class="nav-number">3.4.</span> <span class="nav-text">Search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-the-Minimum"><span class="nav-number">3.5.</span> <span class="nav-text">Finding the Minimum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Finding-the-Maximum"><span class="nav-number">3.6.</span> <span class="nav-text">Finding the Maximum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Successor"><span class="nav-number">3.7.</span> <span class="nav-text">Successor</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Definition"><span class="nav-number">3.7.1.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-1"><span class="nav-number">3.7.2.</span> <span class="nav-text">Case 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-2"><span class="nav-number">3.7.3.</span> <span class="nav-text">Case 2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Predecessor"><span class="nav-number">3.8.</span> <span class="nav-text">Predecessor</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Definition-1"><span class="nav-number">3.8.1.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-1-1"><span class="nav-number">3.8.2.</span> <span class="nav-text">Case 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Case-2-1"><span class="nav-number">3.8.3.</span> <span class="nav-text">Case 2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert"><span class="nav-number">3.9.</span> <span class="nav-text">Insert</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Goal"><span class="nav-number">3.9.1.</span> <span class="nav-text">Goal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Method"><span class="nav-number">3.9.2.</span> <span class="nav-text">Method</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deletion"><span class="nav-number">3.10.</span> <span class="nav-text">Deletion</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Goal-1"><span class="nav-number">3.10.1.</span> <span class="nav-text">Goal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Idea"><span class="nav-number">3.10.2.</span> <span class="nav-text">Idea</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Case-1-2"><span class="nav-number">3.10.2.1.</span> <span class="nav-text">Case 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Case-2-2"><span class="nav-number">3.10.2.2.</span> <span class="nav-text">Case 2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Case-3"><span class="nav-number">3.10.2.3.</span> <span class="nav-text">Case 3</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary"><span class="nav-number">3.11.</span> <span class="nav-text">Summary</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Operations-on-Binary-Search-Trees"><span class="nav-number">3.11.1.</span> <span class="nav-text">Operations on Binary Search Trees</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Issues"><span class="nav-number">3.12.</span> <span class="nav-text">Issues</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Possible-Solution"><span class="nav-number">3.12.1.</span> <span class="nav-text">Possible Solution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Proven-Solution"><span class="nav-number">3.12.2.</span> <span class="nav-text">Proven Solution</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Red-Black-Tree"><span class="nav-number">4.</span> <span class="nav-text">Red-Black Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties"><span class="nav-number">4.1.</span> <span class="nav-text">Properties</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Black-Height"><span class="nav-number">4.1.1.</span> <span class="nav-text">Black Height</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Height-of-Red-Black-Tree"><span class="nav-number">4.2.</span> <span class="nav-text">Height of Red-Black Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Important-Property-of-Red-Black-Tree"><span class="nav-number">4.2.1.</span> <span class="nav-text">Important Property of Red-Black Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Claim-1"><span class="nav-number">4.2.1.1.</span> <span class="nav-text">Claim 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Claim-2"><span class="nav-number">4.2.1.2.</span> <span class="nav-text">Claim 2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Proof"><span class="nav-number">4.2.1.3.</span> <span class="nav-text">Proof</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operations-of-Red-Black-Tree"><span class="nav-number">4.3.</span> <span class="nav-text">Operations of Red-Black Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Insert-1"><span class="nav-number">4.3.1.</span> <span class="nav-text">Insert</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Red"><span class="nav-number">4.3.1.1.</span> <span class="nav-text">Red</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Black"><span class="nav-number">4.3.1.2.</span> <span class="nav-text">Black</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Delete"><span class="nav-number">4.3.2.</span> <span class="nav-text">Delete</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Red-1"><span class="nav-number">4.3.2.1.</span> <span class="nav-text">Red</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Black-1"><span class="nav-number">4.3.2.2.</span> <span class="nav-text">Black</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rotations"><span class="nav-number">4.3.3.</span> <span class="nav-text">Rotations</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Two-Types-of-Rotations"><span class="nav-number">4.3.3.1.</span> <span class="nav-text">Two Types of Rotations</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Left-Rotations"><span class="nav-number">4.3.3.1.1.</span> <span class="nav-text">Left Rotations</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Right-Rotations"><span class="nav-number">4.3.3.1.2.</span> <span class="nav-text">Right Rotations</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Insert-with-Rotation"><span class="nav-number">4.3.4.</span> <span class="nav-text">Insert with Rotation</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Analysis-of-INSERT"><span class="nav-number">4.3.4.1.</span> <span class="nav-text">Analysis of INSERT</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary-1"><span class="nav-number">4.4.</span> <span class="nav-text">Summary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AVL-Tree"><span class="nav-number">5.</span> <span class="nav-text">AVL Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tree-Height"><span class="nav-number">5.1.</span> <span class="nav-text">Tree Height</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-Height"><span class="nav-number">5.2.</span> <span class="nav-text">Node Height</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Red-Black-Tree-vs-AVL-Tree"><span class="nav-number">5.3.</span> <span class="nav-text">Red-Black Tree vs. AVL Tree</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Large-Data-Application"><span class="nav-number">6.</span> <span class="nav-text">Large Data Application</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-Tree"><span class="nav-number">7.</span> <span class="nav-text">B-Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Motivation-for-B-Trees"><span class="nav-number">7.1.</span> <span class="nav-text">Motivation for B-Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-Layout-on-Disk"><span class="nav-number">7.1.1.</span> <span class="nav-text">Data Layout on Disk</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Disk-Block-Access-Time"><span class="nav-number">7.1.2.</span> <span class="nav-text">Disk Block Access Time</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Motivation"><span class="nav-number">7.1.3.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Limitation-of-Binary-Tree"><span class="nav-number">7.1.4.</span> <span class="nav-text">Limitation of Binary Tree</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Trees"><span class="nav-number">7.2.</span> <span class="nav-text">B-Trees</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tree-Based-Indexing"><span class="nav-number">7.3.</span> <span class="nav-text">Tree-Based Indexing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Constructing-a-B-Tree"><span class="nav-number">7.4.</span> <span class="nav-text">Constructing a B-Tree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert-2"><span class="nav-number">7.5.</span> <span class="nav-text">Insert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-1"><span class="nav-number">7.6.</span> <span class="nav-text">Delete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analysis"><span class="nav-number">7.7.</span> <span class="nav-text">Analysis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Compares"><span class="nav-number">7.8.</span> <span class="nav-text">Compares</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -960,12 +1083,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">121k</span>
+    <span title="Symbols count total">128k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:50</span>
+    <span title="Reading time total">1:56</span>
 </div>
 
         
