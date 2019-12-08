@@ -56,17 +56,21 @@
 </script>
 
   <meta name="description" content="Graph AlgorithmsConcepts and DefinitionsDefinition A graph G = (V, E) consists of a set of vertices, V, and a set of edges, E. Each edge (arc) is a pair (v, w), where v,w $\in$ V. An edge may have a w">
-<meta name="keywords" content="CSC3100,Data Structure,Algorithm">
+<meta name="keywords" content="CSC3100,Algorithm,Data Structure">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSC3100 Week11">
 <meta property="og:url" content="http://chenhaolinolym.github.io/2019/11/10/note/CSC3100/CSC3100-Week11/index.html">
 <meta property="og:site_name" content="Olym&#39;s Secret House">
 <meta property="og:description" content="Graph AlgorithmsConcepts and DefinitionsDefinition A graph G = (V, E) consists of a set of vertices, V, and a set of edges, E. Each edge (arc) is a pair (v, w), where v,w $\in$ V. An edge may have a w">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-10T08:48:27.593Z">
+<meta property="og:image" content="http://chenhaolinolym.github.io/2019/11/10/note/CSC3100/CSC3100-Week11/image-20191206204420631.png">
+<meta property="og:image" content="http://chenhaolinolym.github.io/2019/11/10/note/CSC3100/CSC3100-Week11/image-20191206211717560.png">
+<meta property="og:image" content="http://chenhaolinolym.github.io/2019/11/10/note/CSC3100/CSC3100-Week11/image-20191206213132865.png">
+<meta property="og:updated_time" content="2019-12-06T16:09:00.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSC3100 Week11">
 <meta name="twitter:description" content="Graph AlgorithmsConcepts and DefinitionsDefinition A graph G = (V, E) consists of a set of vertices, V, and a set of edges, E. Each edge (arc) is a pair (v, w), where v,w $\in$ V. An edge may have a w">
+<meta name="twitter:image" content="http://chenhaolinolym.github.io/2019/11/10/note/CSC3100/CSC3100-Week11/image-20191206204420631.png">
   <link rel="canonical" href="http://chenhaolinolym.github.io/2019/11/10/note/CSC3100/CSC3100-Week11/">
 
 
@@ -289,11 +293,19 @@
                 
               
 
-              <time title="Created: 2019-11-10 10:49:33 / Modified: 16:48:27" itemprop="dateCreated datePublished" datetime="2019-11-10T10:49:33+08:00">2019-11-10</time>
+              <time title="Created: 2019-11-10 10:49:33" itemprop="dateCreated datePublished" datetime="2019-11-10T10:49:33+08:00">2019-11-10</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-07 00:09:00" itemprop="dateModified" datetime="2019-12-07T00:09:00+08:00">2019-12-07</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -334,7 +346,7 @@
               
                 <span class="post-meta-item-text">Symbols count in article: </span>
               
-              <span>723</span>
+              <span>4.9k</span>
             </span>
           
             <span class="post-meta-item" title="Reading time">
@@ -344,7 +356,7 @@
               
                 <span class="post-meta-item-text">Reading time &asymp;</span>
               
-              <span>1 mins.</span>
+              <span>4 mins.</span>
             </span>
           
 
@@ -374,7 +386,220 @@
 <h4 id="Undirected-Graph"><a href="#Undirected-Graph" class="headerlink" title="Undirected Graph"></a>Undirected Graph</h4><ul>
 <li>The degree of a vertex v is the number of edges connecting v</li>
 </ul>
-<h2 id="Graph-Representation"><a href="#Graph-Representation" class="headerlink" title="Graph Representation"></a>Graph Representation</h2><h2 id="Topological-Sort"><a href="#Topological-Sort" class="headerlink" title="Topological Sort"></a>Topological Sort</h2>
+<h3 id="Graph-and-Path"><a href="#Graph-and-Path" class="headerlink" title="Graph and Path"></a>Graph and Path</h3><ul>
+<li><p>Complete graph</p>
+<ul>
+<li>A graph with an edge between each pair of vertices</li>
+</ul>
+</li>
+<li><p>Subgraph</p>
+<ul>
+<li>A graph $(V’, E’)$ such that $V’ \subseteq V$ and $E’\subseteq E$</li>
+</ul>
+</li>
+<li><p>Path from v to w</p>
+<ul>
+<li>A sequence of vertices $&lt;v_0, v_1, \dots, v_k&gt;$ such that  $v_0=v$ and $v_k=w$</li>
+</ul>
+</li>
+<li><p>Length of a path</p>
+<ul>
+<li>Number of edges in the path</li>
+</ul>
+</li>
+<li><p>w is reachable from v</p>
+<ul>
+<li>If there is a path from v to w</li>
+</ul>
+</li>
+<li><p>Simple path </p>
+<ul>
+<li>All the vertices in the path are distinct</li>
+</ul>
+</li>
+</ul>
+<h3 id="Cycles"><a href="#Cycles" class="headerlink" title="Cycles"></a>Cycles</h3><ul>
+<li><p>Cycles</p>
+<ul>
+<li>A path $&lt;v_0, v_1, \dots, v_k&gt;$ forms a cycle if $v_0=v_k$ and $k\geq 2$</li>
+</ul>
+</li>
+<li><p>Acyclic graph</p>
+<ul>
+<li>A graph without any cycles</li>
+</ul>
+</li>
+</ul>
+<h3 id="Connected-vs-Strongly-Connected"><a href="#Connected-vs-Strongly-Connected" class="headerlink" title="Connected vs. Strongly Connected"></a>Connected vs. Strongly Connected</h3><ul>
+<li><p>A graph is connected if there is a path from every vertex to every other vertex.</p>
+</li>
+<li><p>A directed graph with this property is called strongly connected.</p>
+<ul>
+<li>If a directed graph is not strongly connected, but the underlying graph (without direction to the edges) is connected, then the graph is said to be weakly connected.</li>
+</ul>
+</li>
+<li><p>Examples of graph models include</p>
+<ul>
+<li>Computer networks; </li>
+<li>Job scheduling</li>
+</ul>
+</li>
+</ul>
+<h3 id="Tree-and-Graph"><a href="#Tree-and-Graph" class="headerlink" title="Tree and Graph"></a>Tree and Graph</h3><ul>
+<li>A tree is a connected, acyclic “undirected” graph</li>
+</ul>
+<h3 id="Bipartite-Graph"><a href="#Bipartite-Graph" class="headerlink" title="Bipartite Graph"></a>Bipartite Graph</h3><ul>
+<li>A bipartite graph is an undirected graph G = (V, E) in which $V = V_1 + V_2$ and there are edges only between vertices in $V_1$ and $V_2$</li>
+</ul>
+<h2 id="Graph-Representation"><a href="#Graph-Representation" class="headerlink" title="Graph Representation"></a>Graph Representation</h2><h3 id="Adjacency-Matrix-Representation"><a href="#Adjacency-Matrix-Representation" class="headerlink" title="Adjacency Matrix Representation"></a>Adjacency Matrix Representation</h3><h4 id="Definition-1"><a href="#Definition-1" class="headerlink" title="Definition"></a>Definition</h4><ul>
+<li><p>Assume vertices are numbered 1, 2, … , |V|</p>
+</li>
+<li><p>The representation consists of a matrix $A_{|V|\times |V|}$:</p>
+</li>
+<li><p>$$<br>\begin{equation}<br>a_{ij} = \left {<br>\begin{aligned}<br>1 &amp;&amp; \text{if (i, j)} \in E\<br>0 &amp;&amp; \text{otherwise}<br>\end{aligned}<br>\right .<br>\end{equation}<br>$$</p>
+</li>
+<li><p><img src="/2019/11/10/note/CSC3100/CSC3100-Week11/image-20191206204420631.png" alt="image-20191206204420631"></p>
+</li>
+<li><p>For undirected graphs, matrix A is symmetric:</p>
+<ul>
+<li>$a_{ij} = a_{ji}$</li>
+<li>$A = A^T$</li>
+</ul>
+</li>
+</ul>
+<h4 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h4><ul>
+<li><p>Memory required</p>
+<ul>
+<li>$\Theta(V^2)$, independent on the number of edges in G</li>
+</ul>
+</li>
+<li><p>Preferred when</p>
+<ul>
+<li>The graph is <strong>dense:</strong> $|E|$ is close to $|V|^2$</li>
+<li>We need to quickly determine if there is an edge between two vertices</li>
+</ul>
+</li>
+<li><p>Time to determine if $(u, v) \in E$:</p>
+<ul>
+<li>$\Theta(1)$</li>
+</ul>
+</li>
+<li><p>Disadvantage</p>
+<ul>
+<li>Waste space for spare graphs</li>
+<li>No quick way to determine the vertices adjacent to another vertex.</li>
+</ul>
+</li>
+<li><p>Time to list all vertices adjacent to u:</p>
+<ul>
+<li>$\Theta(V)$</li>
+</ul>
+</li>
+</ul>
+<h3 id="Adjacency-List-Representation"><a href="#Adjacency-List-Representation" class="headerlink" title="Adjacency List Representation"></a>Adjacency List Representation</h3><h4 id="Definition-2"><a href="#Definition-2" class="headerlink" title="Definition"></a>Definition</h4><ul>
+<li><p>An array of |V| lists, one for each vertex in V</p>
+</li>
+<li><p>Each list Adj[u] contains all the vertices v that are adjacent to u (i.e., there is an edge from u to v)</p>
+</li>
+<li><p>Can be used for both directed and undirected graphs</p>
+</li>
+<li><p><img src="/2019/11/10/note/CSC3100/CSC3100-Week11/image-20191206211717560.png" alt="image-20191206211717560"></p>
+</li>
+</ul>
+<h4 id="Properties-1"><a href="#Properties-1" class="headerlink" title="Properties"></a>Properties</h4><ul>
+<li><p>Sum of “lengths” of all adjacency lists</p>
+<ul>
+<li>Directed graph: |E|<ul>
+<li>edge (u, v) appears only once (i.e., in the list of <strong>u</strong>)</li>
+</ul>
+</li>
+<li>Undirected graph: 2|E|<ul>
+<li>edge (u, v) appears twice (i.e., in the lists of both <strong>u</strong> and <strong>v</strong>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Memory required</p>
+<ul>
+<li>$\Theta(V + E)$</li>
+</ul>
+</li>
+<li><p>Preferred when</p>
+<ul>
+<li>The graph is <strong>sparse</strong>: $|E| \ll |V|^2$</li>
+<li>We need to quickly determine the nodes adjacent to a given node.</li>
+</ul>
+</li>
+<li><p>Disadvantage</p>
+<ul>
+<li>No quick way to determine whether there is an edge between node u and v</li>
+</ul>
+</li>
+<li><p>Time to determine if $(u, v) \in E$:</p>
+<ul>
+<li>O(degree(u))</li>
+</ul>
+</li>
+<li><p>Time to list all vertices adjacent to u:</p>
+<ul>
+<li>$\Theta$(degree(u))​</li>
+</ul>
+</li>
+</ul>
+<h3 id="Representation-in-Weighted-Graph"><a href="#Representation-in-Weighted-Graph" class="headerlink" title="Representation in Weighted Graph"></a>Representation in Weighted Graph</h3><ul>
+<li><p>Graphs for which each edge has an associated weight w(u, v)</p>
+<ul>
+<li>w: <em>E</em> $\Rightarrow$ R, weight function</li>
+</ul>
+</li>
+<li><p>Storing the weights of a graph</p>
+<ul>
+<li>Adjacency list: <ul>
+<li>Store w(u, v) along with vertex v in u’s adjacency list</li>
+</ul>
+</li>
+<li>Adjacency matrix:<ul>
+<li>Store w(u, v) at location (u, v) in the matrix</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><img src="/2019/11/10/note/CSC3100/CSC3100-Week11/image-20191206213132865.png" alt="image-20191206213132865"></p>
+</li>
+</ul>
+<h2 id="Topological-Sort"><a href="#Topological-Sort" class="headerlink" title="Topological Sort"></a>Topological Sort</h2><ul>
+<li><p>An ordering of all vertices in a directed acyclic graph, such that if there is a path from $v_i$ to $v_j$, then $v_j$ appears after $v_i$ in the ordering.</p>
+</li>
+<li><p>If there is no path between $v_i$ and $v_j$, then any order between them is fine.</p>
+</li>
+<li><p>Applications: job scheduling, logistics planning, course selection for each term</p>
+</li>
+<li><p>Topological ordering is not possible if there is a cycle in the graph. </p>
+</li>
+<li><p>A DAG(Directed acyclic graph) has at least one topological ordering.</p>
+</li>
+</ul>
+<h3 id="Simple-Algorithm"><a href="#Simple-Algorithm" class="headerlink" title="Simple Algorithm"></a>Simple Algorithm</h3><ul>
+<li>Compute the indegree of all vertices from the adjacency information of the graph.</li>
+<li>Find any vertex with no incoming edges.</li>
+<li>Print this vertex, and remove it, and its edges.</li>
+<li>Apply this strategy to the rest of the graph.</li>
+</ul>
+<h3 id="Imporved-Algorithm"><a href="#Imporved-Algorithm" class="headerlink" title="Imporved Algorithm"></a>Imporved Algorithm</h3><ul>
+<li><p>Keep all the unassigned vertices of indegree 0 in a queue.</p>
+</li>
+<li><p>While queue not empty</p>
+</li>
+<li><p>Remove a vertex in the queue.</p>
+</li>
+<li><p>Decrement the indegree of all adjacent vertices.</p>
+</li>
+<li><p>If the indegree of an adjacent vertex becomes 0, enqueue the vertex.</p>
+</li>
+<li><p>Running time is O(|E|+|V|).</p>
+</li>
+</ul>
+
     </div>
 
     
@@ -391,9 +616,9 @@
             
               <a href="/tags/CSC3100/" rel="tag"># CSC3100</a>
             
-              <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
-            
               <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+            
+              <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
             
           </div>
         
@@ -472,7 +697,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">54</span>
+          <span class="site-state-item-count">61</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -708,7 +933,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Concepts-and-Definitions"><span class="nav-number">1.</span> <span class="nav-text">Concepts and Definitions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Definition"><span class="nav-number">1.1.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Application"><span class="nav-number">1.2.</span> <span class="nav-text">Application</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Directed-vs-Undirected"><span class="nav-number">1.3.</span> <span class="nav-text">Directed vs. Undirected</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Directed-Graph"><span class="nav-number">1.3.1.</span> <span class="nav-text">Directed Graph</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Undirected-Graph"><span class="nav-number">1.3.2.</span> <span class="nav-text">Undirected Graph</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Graph-Representation"><span class="nav-number">2.</span> <span class="nav-text">Graph Representation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Topological-Sort"><span class="nav-number">3.</span> <span class="nav-text">Topological Sort</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Concepts-and-Definitions"><span class="nav-number">1.</span> <span class="nav-text">Concepts and Definitions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Definition"><span class="nav-number">1.1.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Application"><span class="nav-number">1.2.</span> <span class="nav-text">Application</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Directed-vs-Undirected"><span class="nav-number">1.3.</span> <span class="nav-text">Directed vs. Undirected</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Directed-Graph"><span class="nav-number">1.3.1.</span> <span class="nav-text">Directed Graph</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Undirected-Graph"><span class="nav-number">1.3.2.</span> <span class="nav-text">Undirected Graph</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Graph-and-Path"><span class="nav-number">1.4.</span> <span class="nav-text">Graph and Path</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cycles"><span class="nav-number">1.5.</span> <span class="nav-text">Cycles</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Connected-vs-Strongly-Connected"><span class="nav-number">1.6.</span> <span class="nav-text">Connected vs. Strongly Connected</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tree-and-Graph"><span class="nav-number">1.7.</span> <span class="nav-text">Tree and Graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bipartite-Graph"><span class="nav-number">1.8.</span> <span class="nav-text">Bipartite Graph</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Graph-Representation"><span class="nav-number">2.</span> <span class="nav-text">Graph Representation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Adjacency-Matrix-Representation"><span class="nav-number">2.1.</span> <span class="nav-text">Adjacency Matrix Representation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Definition-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties"><span class="nav-number">2.1.2.</span> <span class="nav-text">Properties</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Adjacency-List-Representation"><span class="nav-number">2.2.</span> <span class="nav-text">Adjacency List Representation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Definition-2"><span class="nav-number">2.2.1.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Properties-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">Properties</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Representation-in-Weighted-Graph"><span class="nav-number">2.3.</span> <span class="nav-text">Representation in Weighted Graph</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Topological-Sort"><span class="nav-number">3.</span> <span class="nav-text">Topological Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Simple-Algorithm"><span class="nav-number">3.1.</span> <span class="nav-text">Simple Algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Imporved-Algorithm"><span class="nav-number">3.2.</span> <span class="nav-text">Imporved Algorithm</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -742,12 +967,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">136k</span>
+    <span title="Symbols count total">176k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:04</span>
+    <span title="Reading time total">2:40</span>
 </div>
 
         

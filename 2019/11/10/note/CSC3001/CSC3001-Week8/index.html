@@ -67,7 +67,9 @@
 <meta property="og:image" content="http://chenhaolinolym.github.io/2019/11/10/note/CSC3001/CSC3001-Week8/image-20191110161033856.png">
 <meta property="og:image" content="http://chenhaolinolym.github.io/2019/11/10/note/CSC3001/CSC3001-Week8/image-20191110161050054.png">
 <meta property="og:image" content="http://chenhaolinolym.github.io/2019/11/10/note/CSC3001/CSC3001-Week8/image-20191110161417797.png">
-<meta property="og:updated_time" content="2019-11-12T06:15:37.750Z">
+<meta property="og:image" content="http://chenhaolinolym.github.io/2019/11/10/note/CSC3001/CSC3001-Week8/image-20191112163503036.png">
+<meta property="og:image" content="http://chenhaolinolym.github.io/2019/11/10/note/CSC3001/CSC3001-Week8/image-20191112162509934.png">
+<meta property="og:updated_time" content="2019-11-12T08:41:32.517Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSC3001 Week8">
 <meta name="twitter:description" content="Introduction to GraphsGraphs, DegreesTypes of GraphsSimple GraphNo multiedges, no loops, no directed edges:Directed GraphMulti-graph Unless otherwise specified, all graphs in this course are simple.">
@@ -305,7 +307,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-12 14:15:37" itemprop="dateModified" datetime="2019-11-12T14:15:37+08:00">2019-11-12</time>
+                <time title="Modified: 2019-11-12 16:41:32" itemprop="dateModified" datetime="2019-11-12T16:41:32+08:00">2019-11-12</time>
               </span>
             
           
@@ -347,7 +349,7 @@
               
                 <span class="post-meta-item-text">Symbols count in article: </span>
               
-              <span>883</span>
+              <span>5.7k</span>
             </span>
           
             <span class="post-meta-item" title="Reading time">
@@ -357,7 +359,7 @@
               
                 <span class="post-meta-item-text">Reading time &asymp;</span>
               
-              <span>1 mins.</span>
+              <span>5 mins.</span>
             </span>
           
 
@@ -393,7 +395,95 @@
 <p>The degree of a vertex v = the number of neighbours of v?</p>
 <p>For multigraphs, <strong>NO</strong>. For simple graphs, <strong>YES</strong>.</p>
 <h3 id="Handshaking-Lemma"><a href="#Handshaking-Lemma" class="headerlink" title="Handshaking Lemma"></a>Handshaking Lemma</h3><p>For any graph, sum of degrees = twice # edges </p>
-<h2 id="Isomorphism"><a href="#Isomorphism" class="headerlink" title="Isomorphism"></a>Isomorphism</h2><h2 id="Path-Cycle-Connectedness"><a href="#Path-Cycle-Connectedness" class="headerlink" title="Path, Cycle, Connectedness"></a>Path, Cycle, Connectedness</h2><h2 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h2><h2 id="Eulerian-Cycle"><a href="#Eulerian-Cycle" class="headerlink" title="Eulerian Cycle"></a>Eulerian Cycle</h2><h2 id="Directed-Graphs"><a href="#Directed-Graphs" class="headerlink" title="Directed Graphs"></a>Directed Graphs</h2>
+<p><strong>Lemma:</strong> $2|E| = \sum_{v \in V} \text{deg}(v)$</p>
+<p><strong>Corollary:</strong> </p>
+<ol>
+<li>Sum of degree is an even number.</li>
+<li>Number of odd degree vertices is even.</li>
+</ol>
+<p><strong>Proof:</strong> Each edge contributes 2 to the sum on the right. <strong>Q.E.D.</strong></p>
+<p><strong>Question:</strong> Given a degree sequence, if the sum of degree is even, is it true that there is always a graph with such a degree sequence?</p>
+<p>For simple graphs, <strong>NO</strong>, consider the degree sequence (3,1). For multigraphs (<em>with self loops</em>), <strong>YES</strong>! </p>
+<h2 id="Isomorphism"><a href="#Isomorphism" class="headerlink" title="Isomorphism"></a>Isomorphism</h2><h3 id="Graph-Isomorphism"><a href="#Graph-Isomorphism" class="headerlink" title="Graph Isomorphism"></a>Graph Isomorphism</h3><p>All that matters is the <em>connections</em>.</p>
+<p>Graphs with the same connections are <strong><em>isomorphic</em></strong>.</p>
+<p>Informally, two graphs are isomorphic if they are the same after <em>renaming</em>. </p>
+<p>Graph isomorphism has applications like fingerprint checking, molecules testing… </p>
+<p><strong>$G_1$ isomorphic to $G_2$ means there is a one-to-one mapping (<em>isomorphism</em>) of the vertices that is edge-preserving.</strong></p>
+<p>$\exists \text{ one-to-one mapping }f: V_1 \rightarrow V_2 \text{ u—v } \in E_1 \text{ iff f(u)—f(v)} \in E_2$</p>
+<p>If $G_1$ and $G_2$ are isomorphic, they have the same:</p>
+<ul>
+<li>Vertices</li>
+<li>Edges</li>
+<li>Degree sequence</li>
+</ul>
+<h3 id="Checking-Graph-Isomorphism"><a href="#Checking-Graph-Isomorphism" class="headerlink" title="Checking Graph Isomorphism"></a>Checking Graph Isomorphism</h3><p>To show two graphs are isomorphic, find a mapping and show that it is edge preserving.</p>
+<p>To show two graphs are not isomorphic, find some isomorphic-preserving properties which is satisfied in one graph but not in the other.</p>
+<h2 id="Path-Cycle-Connectedness"><a href="#Path-Cycle-Connectedness" class="headerlink" title="Path, Cycle, Connectedness"></a>Path, Cycle, Connectedness</h2><p><strong>Path:</strong> Sequence of adjacent vertices.</p>
+<p><strong>Simple Path:</strong> All vertices different.</p>
+<h3 id="Connectedness"><a href="#Connectedness" class="headerlink" title="Connectedness"></a>Connectedness</h3><ul>
+<li><p>Vertices <em>v</em>, <em>w</em> are <em>connected</em> if and only if there is a path starting at <em>v</em> and ending at <em>w</em>.</p>
+</li>
+<li><p>A graph is <em>connected</em> iff every pair of vertices are connected. </p>
+<p>Every graph consists of disjoint connected pieces (called <strong>connected components</strong>) </p>
+<p>So a graph is connected if and only if it has only 1 connected component.</p>
+</li>
+</ul>
+<h3 id="Simple-Cycles"><a href="#Simple-Cycles" class="headerlink" title="Simple Cycles"></a>Simple Cycles</h3><p>A (simple) <em>cycle</em> is a connected graph whose vertices are all of <strong>degree 2</strong>. In particular, for multigraphs, a loop is a cycle.</p>
+<h3 id="Shortest-Paths"><a href="#Shortest-Paths" class="headerlink" title="Shortest Paths"></a>Shortest Paths</h3><p>A path between u and v is <em>shortest</em> if it uses the minimum number of edges among all u-v paths. </p>
+<h2 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h2><p><strong>Forest:</strong> Graphs with no cycles</p>
+<p><strong>Tree:</strong> Connected graphs with no cycles</p>
+<p><strong>Leaf:</strong> a vertex of degree 1</p>
+<h3 id="Tree-Characterization"><a href="#Tree-Characterization" class="headerlink" title="Tree Characterization"></a>Tree Characterization</h3><p><strong>Definition:</strong> A tree is a connected graph with no cycles.</p>
+<p><strong>Claim:</strong> </p>
+<ul>
+<li><p>In a tree, there is a unique simple path between every pair of vertices.</p>
+</li>
+<li><p>A tree cannot have no leaves</p>
+</li>
+<li><p>A tree which have <em>n</em> vertices have <em>m=n-1</em> edges</p>
+</li>
+</ul>
+<h4 id="Characterization-by-Paths"><a href="#Characterization-by-Paths" class="headerlink" title="Characterization by Paths:"></a>Characterization by Paths:</h4><p>A graph is a tree if and only if there is a unique simple path between every pair of vertices.</p>
+<h4 id="Characterization-by-Number-of-Edges"><a href="#Characterization-by-Number-of-Edges" class="headerlink" title="Characterization by Number of Edges:"></a>Characterization by Number of Edges:</h4><p>A graph is a tree if and only if it is connected and has n-1 edges.</p>
+<h2 id="Eulerian-Cycle"><a href="#Eulerian-Cycle" class="headerlink" title="Eulerian Cycle"></a>Eulerian Cycle</h2><h3 id="Euler’s-Theorem"><a href="#Euler’s-Theorem" class="headerlink" title="Euler’s Theorem"></a>Euler’s Theorem</h3><ul>
+<li>A graph has an Eulerian path if and only if it is connected and has at most two vertices with an odd number of edges.</li>
+<li>A connected graph has an Eulerian path if and only if it has zero or two vertices with odd degrees.</li>
+<li>A connected graph has an Eulerian cycle if and only if every vertex is of even degree.</li>
+<li>All of the above are equal</li>
+</ul>
+<p>The technique can be easily generalized to multigraphs, but we only talk about simple graphs.</p>
+<h4 id="Eulerian-Cycle-1"><a href="#Eulerian-Cycle-1" class="headerlink" title="Eulerian Cycle"></a>Eulerian Cycle</h4><p>a cycle that visits each edge exactly once.</p>
+<p><strong>Claim 1:</strong> If the edges of  a connected graph can be partitioned into simple cycles, then we can construct an Eulerian cycle.</p>
+<p><strong>Claim 2:</strong> If every vertex is of even degree, the edges can be partitioned into simple cycles.</p>
+<p><strong>Proof:</strong></p>
+<ul>
+<li>Let C be a simple cycle.</li>
+<li>Remove the edges in C from the graph G and call the new graph G’.</li>
+<li>So the degree of each vertex is either unchanged or decreased by two.</li>
+<li>So every vertex of the graph G’ is still of even degree.</li>
+<li>Note that G’ has fewer edges than G.</li>
+<li>In finite steps, G’ can be partitioned into simple cycles $C_1$ , $C_2$ , …, $C_k$.</li>
+<li>So the original graph G can be partitioned into simple cycles $C_1$ , $C_2$ , …, $C_k$.</li>
+</ul>
+<p>With <strong>Claim 1</strong> and <strong>Claim 2</strong>, Euler’s Theorem can be proved.</p>
+<h4 id="Odd-Degree-Case-in-Eulerian"><a href="#Odd-Degree-Case-in-Eulerian" class="headerlink" title="Odd-Degree Case in Eulerian"></a>Odd-Degree Case in Eulerian</h4><p><strong>Claim 3:</strong>  If a connected graph has two vertices of odd degree, then it has an Eulerian path.</p>
+<p>It can be easily proved.</p>
+<p>Till now we are done.</p>
+<h2 id="Directed-Graphs"><a href="#Directed-Graphs" class="headerlink" title="Directed Graphs"></a>Directed Graphs</h2><p>A digraph G=(V,A) consists of: a set of vertices, <em>V</em> a set of directed <strong>edges</strong> (<strong>arcs</strong>), <em>A</em></p>
+<p><img src="/2019/11/10/note/CSC3001/CSC3001-Week8/image-20191112163503036.png" alt="image-20191112163503036"></p>
+<ul>
+<li>V(G) = {a,b,c,d,e,f}</li>
+<li>A(G) = {da, fa, db, eb, dc, ec, fd} </li>
+</ul>
+<p>For an arc <em>uv</em>, we say <em>u</em> is the <strong>tail</strong> of the arc and <em>v</em> is the <strong>head</strong> of the arc. Also, we say <em>v</em> is an <strong>out-neighbor</strong> of <em>u</em>, and <em>u</em> is an <strong>in-neighbor</strong> of <em>v</em>. </p>
+<p><img src="/2019/11/10/note/CSC3001/CSC3001-Week8/image-20191112162509934.png" alt="image-20191112162509934"></p>
+<h3 id="In-Degrees-and-Out-Degrees"><a href="#In-Degrees-and-Out-Degrees" class="headerlink" title="In-Degrees and Out-Degrees"></a>In-Degrees and Out-Degrees</h3><p>The <strong>out-degree</strong> of a vertex <em>v</em> is the number of <strong>out-neighbors</strong> of <em>v</em>; similarly, the <strong>in-degree</strong> of a vertex <em>v</em> is the number of <strong>in-neighbors</strong> of <em>v</em>.</p>
+<h3 id="Directed-Paths"><a href="#Directed-Paths" class="headerlink" title="Directed Paths"></a>Directed Paths</h3><p>Informally, a directed path is a path that follows the arcs.</p>
+<p><strong>Directed Path:</strong> sequence of vertices $v_1$ , $v_2$ , …, $v_k$ such that there is an arc from $v_i$ to $v_{i+1}$ for each i = 1, …, k-1. </p>
+<p><strong>Simple Directed Path:</strong> a directed path with no repeated vertices.</p>
+<h3 id="Directed-Cycles"><a href="#Directed-Cycles" class="headerlink" title="Directed Cycles"></a>Directed Cycles</h3><p>A digraph is <em>connected</em> if replacing its arcs by undirected edges results in a connected simple graph.  </p>
+<p>A <strong>directed cycle</strong> is a connected digraph that the <em>out-degree</em> and <em>indegree</em> are both 1 for every vertex.  </p>
+
     </div>
 
     
@@ -489,7 +579,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">54</span>
+          <span class="site-state-item-count">61</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -725,7 +815,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Graphs-Degrees"><span class="nav-number">1.</span> <span class="nav-text">Graphs, Degrees</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Types-of-Graphs"><span class="nav-number">1.1.</span> <span class="nav-text">Types of Graphs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Simple-Graph"><span class="nav-number">1.1.1.</span> <span class="nav-text">Simple Graph</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Directed-Graph"><span class="nav-number">1.1.2.</span> <span class="nav-text">Directed Graph</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Multi-graph"><span class="nav-number">1.1.3.</span> <span class="nav-text">Multi-graph</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Simple-Graph-1"><span class="nav-number">1.2.</span> <span class="nav-text">Simple Graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vertex-Degrees"><span class="nav-number">1.3.</span> <span class="nav-text">Vertex Degrees</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Handshaking-Lemma"><span class="nav-number">1.4.</span> <span class="nav-text">Handshaking Lemma</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Isomorphism"><span class="nav-number">2.</span> <span class="nav-text">Isomorphism</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Path-Cycle-Connectedness"><span class="nav-number">3.</span> <span class="nav-text">Path, Cycle, Connectedness</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tree"><span class="nav-number">4.</span> <span class="nav-text">Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Eulerian-Cycle"><span class="nav-number">5.</span> <span class="nav-text">Eulerian Cycle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directed-Graphs"><span class="nav-number">6.</span> <span class="nav-text">Directed Graphs</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Graphs-Degrees"><span class="nav-number">1.</span> <span class="nav-text">Graphs, Degrees</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Types-of-Graphs"><span class="nav-number">1.1.</span> <span class="nav-text">Types of Graphs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Simple-Graph"><span class="nav-number">1.1.1.</span> <span class="nav-text">Simple Graph</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Directed-Graph"><span class="nav-number">1.1.2.</span> <span class="nav-text">Directed Graph</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Multi-graph"><span class="nav-number">1.1.3.</span> <span class="nav-text">Multi-graph</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Simple-Graph-1"><span class="nav-number">1.2.</span> <span class="nav-text">Simple Graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vertex-Degrees"><span class="nav-number">1.3.</span> <span class="nav-text">Vertex Degrees</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Handshaking-Lemma"><span class="nav-number">1.4.</span> <span class="nav-text">Handshaking Lemma</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Isomorphism"><span class="nav-number">2.</span> <span class="nav-text">Isomorphism</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Graph-Isomorphism"><span class="nav-number">2.1.</span> <span class="nav-text">Graph Isomorphism</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Checking-Graph-Isomorphism"><span class="nav-number">2.2.</span> <span class="nav-text">Checking Graph Isomorphism</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Path-Cycle-Connectedness"><span class="nav-number">3.</span> <span class="nav-text">Path, Cycle, Connectedness</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Connectedness"><span class="nav-number">3.1.</span> <span class="nav-text">Connectedness</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Simple-Cycles"><span class="nav-number">3.2.</span> <span class="nav-text">Simple Cycles</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shortest-Paths"><span class="nav-number">3.3.</span> <span class="nav-text">Shortest Paths</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tree"><span class="nav-number">4.</span> <span class="nav-text">Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tree-Characterization"><span class="nav-number">4.1.</span> <span class="nav-text">Tree Characterization</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Characterization-by-Paths"><span class="nav-number">4.1.1.</span> <span class="nav-text">Characterization by Paths:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Characterization-by-Number-of-Edges"><span class="nav-number">4.1.2.</span> <span class="nav-text">Characterization by Number of Edges:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Eulerian-Cycle"><span class="nav-number">5.</span> <span class="nav-text">Eulerian Cycle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Euler’s-Theorem"><span class="nav-number">5.1.</span> <span class="nav-text">Euler’s Theorem</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Eulerian-Cycle-1"><span class="nav-number">5.1.1.</span> <span class="nav-text">Eulerian Cycle</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Odd-Degree-Case-in-Eulerian"><span class="nav-number">5.1.2.</span> <span class="nav-text">Odd-Degree Case in Eulerian</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directed-Graphs"><span class="nav-number">6.</span> <span class="nav-text">Directed Graphs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#In-Degrees-and-Out-Degrees"><span class="nav-number">6.1.</span> <span class="nav-text">In-Degrees and Out-Degrees</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Directed-Paths"><span class="nav-number">6.2.</span> <span class="nav-text">Directed Paths</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Directed-Cycles"><span class="nav-number">6.3.</span> <span class="nav-text">Directed Cycles</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -759,12 +849,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">136k</span>
+    <span title="Symbols count total">176k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:04</span>
+    <span title="Reading time total">2:40</span>
 </div>
 
         

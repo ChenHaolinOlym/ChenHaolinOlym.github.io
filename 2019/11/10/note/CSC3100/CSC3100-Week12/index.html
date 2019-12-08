@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="Shortest Path">
-<meta name="keywords" content="CSC3100,Data Structure,Algorithm">
+  <meta name="description" content="Shortest PathShortest PathProblems How can we find the shortest route between two points on a road map?  Model the problem as a graph problem:  Road map is a weighted graph:  vertices = cities edges =">
+<meta name="keywords" content="CSC3100,Algorithm,Data Structure">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSC3100 Week12">
 <meta property="og:url" content="http://chenhaolinolym.github.io/2019/11/10/note/CSC3100/CSC3100-Week12/index.html">
 <meta property="og:site_name" content="Olym&#39;s Secret House">
-<meta property="og:description" content="Shortest Path">
+<meta property="og:description" content="Shortest PathShortest PathProblems How can we find the shortest route between two points on a road map?  Model the problem as a graph problem:  Road map is a weighted graph:  vertices = cities edges =">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-10T05:40:50.732Z">
+<meta property="og:updated_time" content="2019-12-07T12:24:38.722Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSC3100 Week12">
-<meta name="twitter:description" content="Shortest Path">
+<meta name="twitter:description" content="Shortest PathShortest PathProblems How can we find the shortest route between two points on a road map?  Model the problem as a graph problem:  Road map is a weighted graph:  vertices = cities edges =">
   <link rel="canonical" href="http://chenhaolinolym.github.io/2019/11/10/note/CSC3100/CSC3100-Week12/">
 
 
@@ -289,11 +289,19 @@
                 
               
 
-              <time title="Created: 2019-11-10 10:50:27 / Modified: 13:40:50" itemprop="dateCreated datePublished" datetime="2019-11-10T10:50:27+08:00">2019-11-10</time>
+              <time title="Created: 2019-11-10 10:50:27" itemprop="dateCreated datePublished" datetime="2019-11-10T10:50:27+08:00">2019-11-10</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-12-07 20:24:38" itemprop="dateModified" datetime="2019-12-07T20:24:38+08:00">2019-12-07</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -334,7 +342,7 @@
               
                 <span class="post-meta-item-text">Symbols count in article: </span>
               
-              <span>14</span>
+              <span>1.8k</span>
             </span>
           
             <span class="post-meta-item" title="Reading time">
@@ -344,7 +352,7 @@
               
                 <span class="post-meta-item-text">Reading time &asymp;</span>
               
-              <span>1 mins.</span>
+              <span>2 mins.</span>
             </span>
           
 
@@ -357,8 +365,84 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Shortest Path</p>
+        <p>Shortest Path</p><h2 id="Shortest-Path"><a href="#Shortest-Path" class="headerlink" title="Shortest Path"></a>Shortest Path</h2><h3 id="Problems"><a href="#Problems" class="headerlink" title="Problems"></a>Problems</h3><ul>
+<li><p>How can we find the shortest route between two points on a road map?</p>
+</li>
+<li><p>Model the problem as a graph problem:</p>
+<ul>
+<li>Road map is a weighted graph: <ul>
+<li>vertices = cities</li>
+<li>edges = road segments between cities</li>
+<li>edge weights = road distances</li>
+</ul>
+</li>
+<li>Goal: find a shortest path between two vertices (cities)</li>
+</ul>
+</li>
+<li><p>Input</p>
+<ul>
+<li>Directed Graph G = (V, E)</li>
+<li>Weight Function w: $E\rightarrow R$</li>
+</ul>
+</li>
+<li><p>Weight of the Path $p = &lt;v_0, v_1, \dots, v_k&gt;$</p>
+<ul>
+<li>$w(p) = \sum^k_{i=1}w(v_{i-1}, v_{i})$</li>
+</ul>
+</li>
+<li><p>Shortest-path Weight from u to v:</p>
+<ul>
+<li>$$<br>\begin{equation}<br>\delta(u,v) = \min \left {<br>\begin{aligned}<br>w(p) &amp;&amp; \text{if there exists a path from u to v} \<br>\infty &amp;&amp; \text{otherwise}<br>\end{aligned}<br>\right .<br>\end{equation}<br>$$</li>
+</ul>
+</li>
+<li><p><strong>Note:</strong> there might be <em><strong>multiple</strong> shortest paths</em> from u to v.</p>
+</li>
+</ul><a id="more"></a>
 
+<h3 id="Variants"><a href="#Variants" class="headerlink" title="Variants"></a>Variants</h3><ul>
+<li><p><strong>Single-source shortest paths</strong></p>
+<ul>
+<li>G = (V, E) $\Rightarrow$ find a shortest path from a given source vertex s to each vertex $v \in V$</li>
+</ul>
+</li>
+<li><p><strong>Single-destination shortest paths</strong></p>
+<ul>
+<li>Find a shortest path to a given destination vertex t from each vertex v</li>
+<li>Reversing the direction of each edge $\Rightarrow$ single-source</li>
+</ul>
+</li>
+<li><p><strong>Single-pair shortest path</strong></p>
+<ul>
+<li>Find a shortest path from u to v for given vertices u and v</li>
+</ul>
+</li>
+<li><p><strong>All-pairs shortest-paths</strong></p>
+<ul>
+<li>Find a shortest path from u to v for every pair of vertices u and v</li>
+</ul>
+</li>
+</ul>
+<h3 id="Negative-Weight-Edges"><a href="#Negative-Weight-Edges" class="headerlink" title="Negative-Weight Edges"></a>Negative-Weight Edges</h3><ul>
+<li><p>Negative-weight edges may form negative-weight cycles</p>
+</li>
+<li><p>If such cycles are reachable from the source, then $\delta(s, v)$ is not properly defined!</p>
+<ul>
+<li>Keep going around the cycle, and get $w(s, v) = - \infty$ for all v on the cycle</li>
+</ul>
+</li>
+</ul>
+<h4 id="Cycles"><a href="#Cycles" class="headerlink" title="Cycles"></a>Cycles</h4><p>Shortest weight cannot contain cycles:</p>
+<ul>
+<li>Negative-weight cycles:<ul>
+<li>Shortest path is not well defined</li>
+</ul>
+</li>
+<li>Positive-weight cycles:<ul>
+<li>By removing the cycle, we can get a shorter path </li>
+</ul>
+</li>
+</ul>
+<h3 id="Optimal-Substructure-Theorem"><a href="#Optimal-Substructure-Theorem" class="headerlink" title="Optimal Substructure Theorem"></a>Optimal Substructure Theorem</h3><h3 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h3>
     </div>
 
     
@@ -375,9 +459,9 @@
             
               <a href="/tags/CSC3100/" rel="tag"># CSC3100</a>
             
-              <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
-            
               <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+            
+              <a href="/tags/Data-Structure/" rel="tag"># Data Structure</a>
             
           </div>
         
@@ -431,8 +515,17 @@
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -447,7 +540,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">54</span>
+          <span class="site-state-item-count">61</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -673,6 +766,23 @@
 
         </div>
       </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shortest-Path"><span class="nav-number">1.</span> <span class="nav-text">Shortest Path</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problems"><span class="nav-number">1.1.</span> <span class="nav-text">Problems</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Variants"><span class="nav-number">1.2.</span> <span class="nav-text">Variants</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Negative-Weight-Edges"><span class="nav-number">1.3.</span> <span class="nav-text">Negative-Weight Edges</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Cycles"><span class="nav-number">1.3.1.</span> <span class="nav-text">Cycles</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Optimal-Substructure-Theorem"><span class="nav-number">1.4.</span> <span class="nav-text">Optimal Substructure Theorem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.5.</span> <span class="nav-text">Algorithm</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
         <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
           
@@ -700,12 +810,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">136k</span>
+    <span title="Symbols count total">176k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:04</span>
+    <span title="Reading time total">2:40</span>
 </div>
 
         
